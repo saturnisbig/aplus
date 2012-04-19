@@ -1,0 +1,249 @@
+/* aplus main page stylesheet*/
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, blockquote {
+  margin: 0; padding: 0; border: 0;
+}
+
+body {
+  font-size: 12px;
+  /*color: #333333;*/
+  font-family:Arial, Sans-Serif;
+  line-height: 24px;
+  background: url(images/body-bg.gif) repeat-x scroll 0 0 transparent;
+}
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  color: #97bdbf;
+  /*color: #0099CC;*/
+  text-decoration: underline;
+}
+
+#container {
+  width: 960px;
+  /* height: 100px;
+  height: 768px;*/
+  margin: 0px auto;
+  border: 1px solid green;
+  /*  position: relative;*/
+}
+/* header part */
+#header {
+  width:940px;
+  height: 120px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border: 3px solid #97bdbf;
+}
+#top-banner {
+  width: 940px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+#top-banner-link {
+  float: right;
+}
+#top-banner #top-banner-link a {
+  margin-left: 20px;
+}
+#logo {
+  width:180px;
+  background-color: #ffffff;
+  height: 80px;
+  /*border: 1px solid black;
+  background-image: url(images/aplus-logo.png);
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+background-color: #666666;*/
+padding: 2px 0 0 2px;
+float:left;
+}
+#logo a img {
+  width: 176px;
+  height: 76px;
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid #f8f8f8;
+}
+/*
+#logo a:active, #logo a:hover {
+background-color: #226699;
+}
+ */
+
+#header #top-menu {
+  width: 758px;
+  font-size: 14px;
+  color: #666666;
+  height: 80px;
+  /*border: 1px dotted #226699;*/
+  float: left;
+}
+#top-menu ul {
+  list-style: none;
+  margin: 30px 0 0 0;
+}
+#top-menu ul li:first-child {
+  margin-left: 50px;
+}
+#top-menu ul li {
+  /*display: inline;*/
+  margin: 0 5px 0 5px;
+  float:left;
+}
+#top-menu ul li a {
+  color: #97bdbf;
+  font-weight: bold;
+  display: block;
+}
+/*
+ */
+#top-menu ul li a:active, #top-menu ul li a:hover {
+  color: #336699;
+  text-decoration: underline;
+}
+
+/* main part */
+#main {
+  width: 942px;
+  min-height: 486px;
+  background: #f8f8f8;
+  border: 1px solid red;
+  float: left;
+  margin: 10px 0px 10px 10px;
+}
+
+/* main left-menu part */
+#left-menu {
+  width: 176px;
+  font-size: 14px;
+  float: left;
+  border: 2px solid #336699;
+}
+#left-menu p {
+  height: 30px;
+  background-color: #336699;
+  color: #f8f8f8;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 50px;
+}
+
+#left-menu ul {
+  list-style: none;
+}
+#left-menu ul li {
+  background: #CCCCCC url(images/left-menu-title-bg.png) no-repeat scroll right center;
+  border-top: 0.5px solid #333;
+}
+#left-menu ul li a{
+  display: block;
+  color: gray;
+  text-indent: 5px;
+}
+#left-menu ul li a:hover {
+  background-color: #CCCCCC;
+}
+/* main news part */
+#news {
+  width: 500px;
+  height: 150px;
+  font-size: 13px;
+  margin-right: 10px;
+  border: 1px solid #666666;
+  float: left;
+}
+#news h4 {
+  font-size: 14px;
+  text-indent: 5px;
+  background: url(images/title-bg.gif) repeat scroll 0 0 transparent;
+}
+#news ul li {
+  list-style: none;
+  margin-left: 10px;
+}
+#news ul li span {
+  margin-left: 10px;
+  text-indent: 10px;
+}
+#news ul li a:active, #news ul li a:hover {
+  text-decoration: underline;
+  color: #99CCFF;
+}
+
+#activity {
+  width: 226px;
+  height: 150px;
+  font-size: 13px;
+  border: 1px solid #333;
+  float: left;
+}
+#activity h4 {
+  font-size: 14px;
+  text-indent: 5px;
+  background: url(images/title-bg.gif) repeat scroll 0 0 transparent;
+}
+#activity ul li {
+  list-style: none;
+  margin-left: 10px;
+}
+#activity ul li a:active, #activity ul li a:hover {
+  text-decoration: underline;
+  color: #99CCFF;
+}
+
+#content {
+  width: 740px;
+  border: 1px solid maroon;
+  margin-left: 10px;
+  float: left;
+}
+#introduction {
+  margin: 10px 0 0 0;
+  width: 510px;
+  border: 1px solid #333;
+  float: left;
+}
+
+#footer {
+  width: 940px;
+  height: 148px;
+  /*border: 1px solid gray;
+  float: left;*/
+  clear: left;
+  margin-left: 10px;
+  /*position: absolute;
+  bottom: 0;
+  left: 10px;*/
+position: relative;
+}
+#footer .bottom-nav {
+  width: 940px;
+  background-color: #f8f8f8;
+  border: 1px solid #dddddd;
+  float: left;
+}
+#footer .bottom-nav ul li {
+  width: 120px;
+  list-style: none;
+  font-size: 13px;
+  float: left;
+  margin: 0 50px;
+}
+#footer .bottom-nav ul li ul li{
+  font-size: 11px;
+  line-height: 20px;
+  clear: left;
+  margin: 0px;
+  text-indent: 8px;
+}
+#footer .copyright {
+  width: 940px;
+  font-size: 12px;
+  color: gray;
+  /*border: 1px solid red;*/
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
