@@ -1,11 +1,10 @@
-/* aplus main page stylesheet*/
+/* aplus main page stylesheet
 body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, blockquote {
   margin: 0; padding: 0; border: 0;
-}
+}*/
 
 body {
   font-size: 12px;
-  /*color: #333333;*/
   font-family:Arial, Sans-Serif;
   line-height: 24px;
   background: url(images/body-bg.gif) repeat-x scroll 0 0 transparent;
@@ -16,7 +15,6 @@ a {
 }
 a:hover {
   color: #97bdbf;
-  /*color: #0099CC;*/
   text-decoration: underline;
 }
 
@@ -72,7 +70,7 @@ background-color: #226699;
 }
  */
 
-#header #top-menu {
+#main-nav {
   width: 758px;
   font-size: 14px;
   color: #666666;
@@ -80,26 +78,26 @@ background-color: #226699;
   /*border: 1px dotted #226699;*/
   float: left;
 }
-#top-menu ul {
+#main-nav ul {
   list-style: none;
   margin: 30px 0 0 0;
 }
-#top-menu ul li:first-child {
+#main-nav ul li:first-child {
   margin-left: 50px;
 }
-#top-menu ul li {
+#main-nav ul li {
   /*display: inline;*/
   margin: 0 5px 0 5px;
   float:left;
 }
-#top-menu ul li a {
+#main-nav ul li a {
   color: #97bdbf;
   font-weight: bold;
   display: block;
 }
 /*
  */
-#top-menu ul li a:active, #top-menu ul li a:hover {
+#main-nav ul li a:active, #main-nav ul li a:hover {
   color: #336699;
   text-decoration: underline;
 }
@@ -114,14 +112,14 @@ background-color: #226699;
   margin: 10px 0px 10px 10px;
 }
 
-/* main left-menu part */
-#left-menu {
+/* main secondary-nav part */
+#secondary-nav {
   width: 176px;
   font-size: 14px;
   float: left;
   border: 2px solid #336699;
 }
-#left-menu p {
+#secondary-nav p {
   height: 30px;
   background-color: #336699;
   color: #f8f8f8;
@@ -130,19 +128,19 @@ background-color: #226699;
   padding-left: 50px;
 }
 
-#left-menu ul {
+#secondary-nav ul {
   list-style: none;
 }
-#left-menu ul li {
-  background: #CCCCCC url(images/left-menu-title-bg.png) no-repeat scroll right center;
+#secondary-nav ul li {
+  background: #CCCCCC url(images/secondary-nav-title-bg.png) no-repeat scroll right center;
   border-top: 0.5px solid #333;
 }
-#left-menu ul li a{
+#secondary-nav ul li a{
   display: block;
   color: gray;
   text-indent: 5px;
 }
-#left-menu ul li a:hover {
+#secondary-nav ul li a:hover {
   background-color: #CCCCCC;
 }
 /* main news part */
@@ -218,20 +216,20 @@ background-color: #226699;
   left: 10px;*/
 position: relative;
 }
-#footer .bottom-nav {
+#footer .third-nav {
   width: 940px;
   background-color: #f8f8f8;
   border: 1px solid #dddddd;
   float: left;
 }
-#footer .bottom-nav ul li {
+#footer .third-nav ul li {
   width: 120px;
   list-style: none;
   font-size: 13px;
   float: left;
   margin: 0 50px;
 }
-#footer .bottom-nav ul li ul li{
+#footer .third-nav ul li ul li{
   font-size: 11px;
   line-height: 20px;
   clear: left;

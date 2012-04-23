@@ -6,7 +6,7 @@ from datetime import datetime
 
 render = settings.render
 db = settings.db
-tb = 'todo'
+tb = 'aplus_grade'
 
 def get_by_id(id):
     s = db.select(tb, where='id=$id', vars=locals())
@@ -76,6 +76,51 @@ class Delete:
 class Index:
 
     def GET(self):
-        #todos = db.select(tb, order='finished asc, id asc')
+        grades = db.select('aplus_grade', order='grade_id asc')
+        activities = db.select('aplus_activity', order='activity_post_date asc')
         #return render.index(todos)
-        return render.index()
+        return render.index(grades, activities)
+
+class About(object):
+    def GET(self):
+        return render.aplus.about()
+
+class Courses(object):
+    def GET(self):
+        tb = 'aplus_course'
+        courses = db.select(tb, order='course_id asc')
+        return render.aplus.courseList(courses)
+
+class CoursesView(object):
+    def GET(self, id):
+        tb = 'aplus_course'
+        course = db.select(tb, where='course_id=$id')
+        return render.aplus.courseDetail(course)
+
+class GradeView(object):
+    def GET(self, id):
+        tb = 'aplus_class_info'
+        courses = db.select(tb, where='gradeID=$id')
+        return render.aplus.courseList(courses)
+
+class Teachers(object):
+    def GET(self):
+        tb = 'aplus_teacher'
+        teachers = db.select(tb, order='teacher_id asc')
+        return render.aplus.teacherList(teachers)
+
+class TeachersView(object):
+    def GET(self, id):
+        teacher = db.select('aplus_teacher', where='teacher_id=$id')
+        return render.aplus.teacherDetail(teacher)
+
+class Activities(object):
+    def GET(self):
+        tb = 'aplus_activity'
+        activities = db.select(tb, order='activity_post_date desc')
+        return render.aplus.activityList(activities)
+
+class ActivitiesView(object):
+    def GET(self, id):
+        activity = db.select('aplus_activity', where='activity_id=$id')
+        return render.aplus.activityDetail(activity)
