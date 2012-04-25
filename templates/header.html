@@ -38,3 +38,27 @@
     </div> <!-- header ends. -->
 
     <div id="main"> <!-- main starts. -->
+      <div id="secondary-nav"> <!-- secondary-nav starts. -->
+        <p>课程导航</p>
+        <ul>
+          <!--
+          $#$for grade in grades:
+          $#<li><a href="/grade/$grade.grade_id">$grade.grade_name 
+          $#    $if grade.grade_alias != "": 
+          $#    ($grade.grade_alias)
+          </a></li>
+          -->
+          <li><a href="/grades/1">小学一年级</a></li>
+          <li><a href="/grades/2">小学二年级</a></li>
+          <li><a href="/grades/3">小学三年级</a></li>
+          <li><a href="/grades/4">小学四年级</a></li>
+          <li><a href="/grades/5">小学五年级</a></li>
+          <li><a href="/grades/6">小学六年级(小升初)</a></li>
+          <li><a href="/grades/7">初中一年级</a></li>
+          <li><a href="/grades/8">初中二年级</a></li>
+          <li><a href="/grades/9">初中三年级(初升高)</a></li>
+          <li><a href="/grades/10">高中一年级</a></li>
+          <li><a href="/grades/11">高中二年级</a></li>
+          <li><a href="/grades/12">高中三年级</a></li>
+        </ul>
+      </div> <!-- secondary-nav ends. -->

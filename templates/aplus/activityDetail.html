@@ -1,0 +1,10 @@
+$def with(activities)
+
+$:render.header()
+
+$for activity in activities:
+  <h2>$activity.activity_title</h2>
+  <p>$activity.activity_postDate</p>
+  <p>$activity.activity_content</p>
+
+$:render.footer()

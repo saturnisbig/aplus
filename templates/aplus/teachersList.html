@@ -1,0 +1,10 @@
+$def with(teachers)
+
+$:render.header()
+<div id="teachersList">
+<ul>
+$for teacher in teachers:
+  <li><a href="/teachers/$teacher.teacher_id">$teacher.teacher_name</a></li>
+</ul>
+</div>
+$:render.footer()

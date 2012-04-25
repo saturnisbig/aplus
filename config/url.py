@@ -9,7 +9,7 @@ urls = (
     '/courses',             pre_fix + 'aplus.Courses',
     '/courses/(\d+)',       pre_fix + 'aplus.CoursesView',
     #'/grade',               pre_fix + 'aplus.Grade',
-    '/grade/(\d+)',         pre_fix + 'aplus.GradeView',
+    '/grades/(\d+)',         pre_fix + 'aplus.GradesView',
     '/teachers',            pre_fix + 'aplus.Teachers',
     '/teachers/(\d+)',      pre_fix + 'aplus.TeachersView',
     '/activities',          pre_fix + 'aplus.Activities',

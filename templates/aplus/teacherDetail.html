@@ -1,0 +1,11 @@
+$def with(teachers)
+
+$:render.header()
+
+$for teacher in teachers:
+  <p>$teacher.teacher_name</p>
+  <p>$teacher.teacher_intro</p>
+  <p>$teacher.teacher_method</p>
+  <p>$teacher.teacher_style</p>
+
+$:render.footer()

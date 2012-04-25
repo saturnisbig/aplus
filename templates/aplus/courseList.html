@@ -1,0 +1,11 @@
+$def with(courses)
+
+$:render.header()
+<div id="courseList">
+  <ul>
+  $for course in courses:
+    <li><a href="/courses/$course.course_id">$course.course_title</a></li>
+  </ul>
+</div>
+
+$:render.footer()
