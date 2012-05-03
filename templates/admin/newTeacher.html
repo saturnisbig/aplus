@@ -1,0 +1,65 @@
+$def with (action, stages, bols, schools, error=None)
+<form action="/admin/teacher/new" method="post" accept-charset="utf-8">
+  $if error:
+    <div class="error">
+      <em>$error</em>
+    </div>
+
+  <fieldset>
+    $if action == 'new':
+      <legend>添加教师</legend>
+    $else:
+      <legend>编辑教师信息</legend>
+    <div class="row" id="teacher_name_container">
+      <label for="teacher_name">教师姓名：</label>
+      <input type="text" name="teacher_name" value="" id="teacher_name"/>
+      $#include some error information tpl.
+    </div>
+
+    <div class="row" id="stage_name_container">
+      <label for="stage_name">教授年级：</label>
+      <select name="stage_id" id="stage_name" $if bol_id: default="bol_id">
+        $for stage in stages:
+          <option value="$stage.stage_id">$stage.stage_name</option>
+      </select>
+    </div>
+
+    <div class="row" id="bol_name_container">
+      <label for="bol_name">教授学科：</label>
+      <select name="bol_id" id="bol_name">
+        $for bol in bols:
+          <option value="$bol.bol_id">$bol.bol_name</option>
+      </select>
+    </div>
+
+    <div class="row" id="school_name_container">
+      <label for="school_name">所属校区：</label>
+      <select name="school_id" id="school_name">
+        $for school in schools:
+          <option value="$school.school_id">$school.school_name</option>
+      </select>
+    </div>
+
+      <div id="teacher_intro_container" class="row">
+        <label for="teacher_intro">教师简介：</label>
+        <textarea name="teacher_intro" rows="8" cols="40"></textarea>
+        $#include some error infomation.
+      </div>
+
+      <div id="teacher_style_container" class="row">
+        <label for="teacher_style">教学风格：</label>
+        <textarea name="teacher_style" rows="4" cols="40"></textarea>
+        $#include some error infomation.
+      </div>
+
+      <div id="teacher_method_container" class="row">
+        <label for="teacher_method">授课方法：</label>
+        <textarea name="teacher_method" rows="8" cols="40"></textarea>
+        $#include some error infomation.
+      </div>
+    </fieldset>
+
+    <p><input type="submit" value="添加&rarr;"/></p>
+  </form>
+
+

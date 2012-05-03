@@ -1,0 +1,23 @@
+<form action="action" method="post" accept-charset="utf-8">
+  $if error:
+    <div class="error">
+      错误了.
+    </div>
+
+  <fieldset>
+    <legend>Course Post Detail</legend>
+    <div class="row" id="course_title_container">
+      <label for="course_title">课程名称：</label>
+      <input type="text" name="course_title" value="$course.course_title" id="course_title"/>
+      $#include some error information tpl.
+    </div>
+
+    <div id="course_content_container" class="row">
+      <label for="course_content">课程介绍：</label>
+      <textarea name="content" rows="8" cols="40">$course.course_intro</textarea>
+      $#include some error infomation.
+    </div>
+
+
+  <p><input type="submit" value="Continue &rarr;"/></p>
+</form>

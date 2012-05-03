@@ -17,8 +17,8 @@ inoremap <Plug>ZenCodingExpandAbbr u:call zencoding#expandAbbr(0)a
 inoremap <silent> <S-Tab> =BackwardsSnippet()
 inoremap <C-Tab> 	
 map  h
-xmap <NL> j
 nmap <NL> j
+xmap <NL> j
 snoremap <silent> <NL> i<Right>=TriggerSnippet()
 omap <NL> j
 map  k
@@ -94,11 +94,11 @@ snoremap \ b<BS>\
 snoremap ^ b<BS>^
 snoremap ` b<BS>`
 nmap gx <Plug>NetrwBrowseX
-xmap <Right> :bn
-nmap <Right> :bn
-xmap <Left> :bp
-nmap <Left> :bp
 vmap <F7> :call Python_Eval_VSplit() 
+nmap <Left> :bp
+xmap <Left> :bp
+nmap <Right> :bn
+xmap <Right> :bn
 snoremap <Left> bi
 snoremap <Right> a
 snoremap <BS> b<BS>
@@ -235,19 +235,46 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +158 ~/sourcecode/python/webpy.github.com/docs/0.3/tutorial.md
+badd +19 ~/projects/djangoprojects/mysite/mysite/view.py
+badd +12 ~/projects/djangoprojects/mysite/mysite/urls.py
+badd +9 ~/vimwiki/index.wiki
+badd +4 ~/vimwiki/DjangoBook.wiki
+badd +61 ~/vimwiki/Chapter\ 3\ 视图和URL配置.wiki
+badd +10 ~/.vim/bundle/vimwiki/ftplugin/vimwiki.vim
+badd +18 ~/.vim/bundle/vimwiki/plugin/vimwiki.vim
+badd +1 ~/vimwiki/Chapter\ 4\ 模板.wiki
 badd +1 controllers/aplus.py
+badd +2 templates/todo/edit.html
+badd +39 templates/index.html.bk
+badd +6 templates/header.html
+badd +21 config/url.py
+badd +13 templates/aplus/login.html
 badd +2 templates/index.html
-badd +12 config/url.py
-badd +37 templates/header.html
-badd +61 static/sql/ap.sql
+badd +161 static/sql/ap.sql
 badd +1 ~/vimwiki/diary/2012-04-23.wiki
 badd +1 ~/vimwiki/diary/diary.wiki
-badd +1 templates/aplus/courseDetail.html
+badd +5 templates/aplus/courseDetail.html
 badd +365 ~/.vimrc
 badd +2 templates/foot.html.bk
-badd +38 templates/index.html.bk
 badd +12 templates/header.html.bk
 badd +7 templates/aplus/courseList.html
+badd +1 ~/sourcecode/python/simple-todo-read-only/config/url.py
+badd +2 /var/www/redditriver/config/riverconfig.py
+badd +12 ~/sourcecode/python/tpbmirror-read-only/config/url.py
+badd +274 /var/www/redditriver/web/redditriver.py
+badd +1 /var/www/redditriver/web/templates/about.tpl.html
+badd +11 ~/sourcecode/python/tpbmirror-read-only/controllers/view.py
+badd +1 ~/sourcecode/python/tpbmirror-read-only/config/settings.py
+badd +16 config/settings.py
+badd +1 ~/sourcecode/python/tpbmirror-read-only/controllers/daemon.py
+badd +49 ../../sourcecode/python/tpbmirror-read-only/utils/fetchdouban.py
+badd +1 templates/submit.html
+badd +0 templates/aplus/newCourse.html
+badd +7 templates/aplus/newTeacher.html
+badd +0 templates/aplus/newActivity.html
+badd +4 ~/vimwiki/HowTos.wiki
+badd +10 ~/vimwiki/MySQLHowTos.wiki
 args controllers/aplus.py
 edit controllers/aplus.py
 set splitbelow splitright
@@ -376,13 +403,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 99 - ((11 * winheight(0) + 12) / 25)
+let s:l = 64 - ((16 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-99
-normal! 046l
-tabedit templates/aplus/courseDetail.html
+64
+normal! 018l
+tabedit templates/aplus/newTeacher.html
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -494,13 +521,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 4 - ((3 * winheight(0) + 12) / 25)
+let s:l = 36 - ((17 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 014l
-tabnext 1
+36
+normal! 023l
+tabnext 2
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif

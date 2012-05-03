@@ -121,7 +121,7 @@ INSERT INTO `aplus_stage` (stage_name) VALUES ('高中');
 
 CREATE TABLE IF NOT EXISTS `aplus_school` (
   `school_id` int(11) NOT NULL AUTO_INCREMENT,
-  `school_name` int(11) NOT NULL,
+  `school_name` varchar(50) NOT NULL,
   PRIMARY KEY (`school_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -143,14 +143,14 @@ INSERT INTO `aplus_season` (season_name) VALUES ('寒假班');
 
 -- --------------------------------------------------------
 -- 教师信息表的结构 `aplus_teacher`
--- course_id: 外键，对应学科表
+-- bol_id: 外键，对应学科表
 -- stage_id : 外键，对应阶段表
 -- school_id: 外键，对应校区表
 -- --------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `aplus_teacher` (
   `teacher_id` int(11) NOT NULL AUTO_INCREMENT,
   `teacher_name` varchar(50) NOT NULL,
-  `course_id` int(11) NOT NULL,
+  `bol_id` int(11) NOT NULL,
   `stage_id` int(11) NOT NULL,
   `school_id` int(11) NOT NULL,
   `teacher_intro` text DEFAULT NULL,

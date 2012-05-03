@@ -2,7 +2,7 @@
 # coding: utf-8
 import web
 
-db = web.database(dbn='mysql', db='aplus', user='root', pw='root', charset='utf8')
+db = web.database(dbn='mysql', db='aplus', user='root', pw='root')
 
 render = web.template.render('templates/', cache=False)
 
@@ -13,6 +13,8 @@ config = web.storage(
     site_name = 'A佳教育',
     site_desc = '',
     static = '/static',
+    # item number listed perpage.
+    perpage = 10,
 )
 
 

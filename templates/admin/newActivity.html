@@ -1,0 +1,24 @@
+$def with (error=None)
+<form action="/admin/activity/new" method="post" accept-charset="utf-8">
+  $if error:
+    <div class="error">
+      <em>$error</em>
+    </div>
+
+  <fieldset>
+    <legend>创建活动</legend>
+    <div class="row" id="activity_title_container">
+      <label for="activity_title">活动标题：</label>
+      <input type="text" name="activity_title" value="" id="activity_title"/>
+      $#include some error information tpl.
+    </div>
+
+    <div id="activity_content_container" class="row">
+      <label for="activity_content">活动内容：</label>
+      <textarea name="activity_content" rows="8" cols="40"></textarea>
+      $#include some error infomation.
+    </div>
+  </fieldset>
+
+  <p><input type="submit" value="新建&rarr;"/></p>
+</form>

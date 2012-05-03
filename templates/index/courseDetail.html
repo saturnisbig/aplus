@@ -1,0 +1,9 @@
+$def with(courses)
+
+$:render.header()
+
+$for course in courses:
+  <h3>$course.course_title</h3>
+  <p>$course.course_intro</p>
+
+$:render.footer()

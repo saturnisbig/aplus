@@ -1,0 +1,18 @@
+$def with(type, contents)
+
+<div>
+<dl>
+$if type == 'teacher':
+  <dt>teacher choose.</dt>
+$elif type == 'activity':
+  <dt>activity choose.</dt>
+$elif type == 'course':
+  <dt>course choose.</dt>
+$else:
+  <dt>Not content type choose.</dt>
+
+<dt>$contents</dt>
+<dt><a href="/admin/$type/techer_id/edit">编辑</a></dt>
+<dt><a href="/admin/$type/techer_id/delete">删除</a></dt>
+</dl>
+</div>

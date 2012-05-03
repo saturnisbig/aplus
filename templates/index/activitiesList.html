@@ -1,0 +1,10 @@
+$def with(activities)
+
+$:render.header()
+<div id="activitiessList">
+<ul>
+$for activity in activities:
+  <li><a href="/activities/$activity.activity_id">$activity.activity_title</a></li>
+</ul>
+</div>
+$:render.footer()

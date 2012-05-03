@@ -1,0 +1,47 @@
+$def with (error=None)
+<form action="/admin/course/new" method="post" accept-charset="utf-8">
+  $if error:
+    <div class="error">
+      <em>$error</em>
+    </div>
+
+  <fieldset>
+    <legend>新建课程</legend>
+    <div class="row" id="course_title_container">
+      <label for="course_title">课程标题：</label>
+      <input type="text" name="course_title" value="" id="course_title"/>
+      $#include some error information tpl.
+    </div>
+
+    <div class="row" id="course_fee_container">
+      <label for="course_fee">课程费用：</label>
+      <input type="text" name="course_fee" value="" id="course_fee"/>
+      $#include some error information tpl.
+    </div>
+
+    <div id="course_intro_container" class="row">
+      <label for="course_intro">课程介绍：</label>
+      <textarea name="course_intro" rows="8" cols="40"></textarea>
+      $#include some error infomation.
+    </div>
+<!--
+    <div class="row" id="course_fee_container">
+      <label for="course_fee">课程费用：</label>
+      <input type="text" name="course_fee" value="" id="course_fee"/>
+    </div>
+    <div class="row" id="course_fee_container">
+      <label for="course_fee">课程费用：</label>
+      <input type="text" name="course_fee" value="" id="course_fee"/>
+      $#include some error information tpl.
+    </div>
+    <div class="row" id="course_fee_container">
+      <label for="course_fee">课程费用：</label>
+      <input type="text" name="course_fee" value="" id="course_fee"/>
+      $#include some error information tpl.
+    </div>
+    -->
+  </fieldset>
+
+  <p><input type="submit" value="新建&rarr;"/></p>
+</form>
+
