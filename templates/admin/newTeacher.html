@@ -1,15 +1,12 @@
-$def with (action, stages, bols, schools, error=None)
-<form action="/admin/teacher/new" method="post" accept-charset="utf-8">
+$def with (stages, bols, schools, error=None)
+<form action="/admin/teacher/$action" method="post" accept-charset="utf-8">
   $if error:
     <div class="error">
       <em>$error</em>
     </div>
 
   <fieldset>
-    $if action == 'new':
       <legend>添加教师</legend>
-    $else:
-      <legend>编辑教师信息</legend>
     <div class="row" id="teacher_name_container">
       <label for="teacher_name">教师姓名：</label>
       <input type="text" name="teacher_name" value="" id="teacher_name"/>
@@ -18,7 +15,7 @@ $def with (action, stages, bols, schools, error=None)
 
     <div class="row" id="stage_name_container">
       <label for="stage_name">教授年级：</label>
-      <select name="stage_id" id="stage_name" $if bol_id: default="bol_id">
+      <select name="stage_id" id="stage_name">
         $for stage in stages:
           <option value="$stage.stage_id">$stage.stage_name</option>
       </select>
@@ -28,7 +25,7 @@ $def with (action, stages, bols, schools, error=None)
       <label for="bol_name">教授学科：</label>
       <select name="bol_id" id="bol_name">
         $for bol in bols:
-          <option value="$bol.bol_id">$bol.bol_name</option>
+            <option value="$bol.bol_id">$bol.bol_name</option>
       </select>
     </div>
 

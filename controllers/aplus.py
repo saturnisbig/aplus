@@ -107,14 +107,31 @@ class Edit:
     def GET(self, type, id):
         if type == 'teacher':
             tb = 'aplus_teacher'
-            teacher = db.select(tb, where='id=$id', vars=locals()).list[0]
-            bol_id = teacher['bol_id']
-            return render.admin.newTeacher()
+            stages = db.select('aplus_stage')
+            bols = db.select('aplus_bol')
+            schools = db.select('aplus_school')
+            teacher = db.select(tb, where='teacher_id=$id', vars=locals()).list()[0]
+            return render.admin.editTeacher(stages, bols, schools, teacher)
+            #stage_id = teacher.stage_id
+            #bol_id = teacher.bol_id
+            #school_id = teacher.school_id
+            #teacher_name = teacher.teacher_name
+            #teacher_intro = teacher.teacher_intro
+            #teacher_style = teacher.teacher_style
+            #teacher_method = teacher.teacher_method
+            #stage_id = teacher.get('stage_id')
+            #bol_id = teacher.get('bol_id')
+            #school_id = teacher.get('school_id')
+            #teacher_name = teacher.get('teacher_name')
+            #teacher_intro = teacher.get('teacher_intro')
+            #teacher_style = teacher.get('teacher_style')
+            #teacher_method = teacher.get('teacher_method')
+            #return render.admin.editTeacher(stages, bols, schools, teacher_name, teacher_intro, teacher_style, teacher_method, stage_id, bol_id, school_id)
 
-        todo = get_by_id(id)
-        if not todo:
-            return render.error('没找到这条记录', None)
-        return render.todo.edit(todo)
+        #todo = get_by_id(id)
+        #if not todo:
+        #    return render.error('没找到这条记录', None)
+        #return render.todo.edit(todo)
 
     def POST(self, id):
         todo = get_by_id(id)

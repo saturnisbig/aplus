@@ -1,0 +1,74 @@
+$def with(stages, bols, schools, teacher, stage_id=None, bol_id=None, school_id=None, error=None)
+$#$def with(teacher_name, teacher_intro, teacher_style, teacher_method)
+
+<form action="/admin/teacher/edit" method="post" accept-charset="utf-8">
+  $if error:
+    <div class="error">
+      <em>$error</em>
+    </div>
+
+  <fieldset>
+      <legend>编辑教师信息</legend>
+    <div class="row" id="teacher_name_container">
+      <label for="teacher_name">教师姓名：</label>
+      <input type="text" name="teacher_name" value="$teacher.teacher_name" id="teacher_name"/>
+      $#include some error information tpl.
+    </div>
+
+    <div class="row" id="stage_name_container">
+      <label for="stage_name">教授年级：</label>
+      <select name="stage_id" id="stage_name">
+        $for stage in stages:
+            $if stage.stage_id == teacher.stage_id:
+                <option value="$stage.stage_id" selected="selected">$stage.stage_name</option>
+            $else:
+                <option value="$stage.stage_id">$stage.stage_name</option>
+      </select>
+    </div>
+
+    <div class="row" id="bol_name_container">
+      <label for="bol_name">教授学科：</label>
+      <select name="bol_id" id="bol_name">
+        $for bol in bols:
+            $if bol.bol_id == teacher.bol_id:
+                <option value="$bol.bol_id" selected="selected">$bol.bol_name</option>
+            $else:
+                <option value="$bol.bol_id">$bol.bol_name</option>
+      </select>
+    </div>
+
+    <div class="row" id="school_name_container">
+      <label for="school_name">所属校区：</label>
+      <select name="school_id" id="school_name">
+        $for school in schools:
+            $if school.school_id == teacher.school_id:
+                <option value="$school.school_id" selected="selected">$school.school_name</option>
+            $else:
+                <option value="$school.school_id">$school.school_name</option>
+      </select>
+    </div>
+
+      <div id="teacher_intro_container" class="row">
+        <label for="teacher_intro">教师简介：</label>
+        <textarea name="teacher_intro" rows="8" cols="40">$teacher.teacher_intro</textarea>
+        $#include some error infomation.
+      </div>
+
+      <div id="teacher_style_container" class="row">
+        <label for="teacher_style">教学风格：</label>
+        <textarea name="teacher_style" rows="4" cols="40">$teacher.teacher_style</textarea>
+        $#include some error infomation.
+      </div>
+
+      <div id="teacher_method_container" class="row">
+        <label for="teacher_method">授课方法：</label>
+        <textarea name="teacher_method" rows="8" cols="40">$teacher.teacher_method</textarea>
+        $#include some error infomation.
+      </div>
+    </fieldset>
+
+    <p><input type="submit" value="修改&rarr;"/></p>
+  </form>
+
+
+
