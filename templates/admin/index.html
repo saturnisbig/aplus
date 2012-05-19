@@ -16,4 +16,6 @@ $if contents:
     <dt><a href="/admin/$type/techer_id/edit">编辑</a></dt>
     <dt><a href="/admin/$type/techer_id/delete">删除</a></dt>
     </dl>
+$if context.username:
+    <p>欢迎，$context.username，您已登录。<a href="/admin/logout">登出</a></p>
 </div>

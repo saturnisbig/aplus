@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 import web
+from code import session
 
 db = web.database(dbn='mysql', db='aplus', user='root', pw='root')
 
-render = web.template.render('templates/', cache=False)
+# 添加session全局变量,方便在模板中访问.
+render = web.template.render('templates/', globals={'context': session},
+                             cache=False)
 
 web.config.debug = True
 

@@ -23,6 +23,7 @@ urls = (
     '/admin/(.*)/(\d+)/delete',   pre_fix + 'aplus.Delete',
     '/admin/register',      pre_fix + 'aplus.Register',
     '/admin/login',         pre_fix + 'aplus.Login',
+    '/admin/logout',        pre_fix + 'aplus.Logout',
     '/todo/new',            pre_fix + 'todo.New',
     '/todo/(\d+)',          pre_fix + 'todo.View',
     '/todo/(\d+)/edit',     pre_fix + 'todo.Edit',

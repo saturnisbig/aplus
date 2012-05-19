@@ -3,6 +3,7 @@
 import web
 from config import settings
 from datetime import datetime
+from code import session
 import re, hashlib
 
 render = settings.render
@@ -41,7 +42,10 @@ def is_valid_username(username):
 class Admin(object):
 
     def GET(self):
-        return render.admin.index('teacher', "")
+        if session.logined:
+            return render.admin.index('teacher', "")
+        else:
+            raise web.seeother('/admin/login')
 
 class New:
 
@@ -221,12 +225,27 @@ class Login(object):
                 errors.append(u'用户名或密码错误。')
 
         if len(errors) == 0:
-            user_id = result[0].user_id
+            user = result[0]
+            user_id, username = user.user_id, user.username
             last_login = datetime.now()
             db.update('users', where="user_id=$user_id", ts_last_login=last_login, vars=locals())
+            session.logined = True
+            session.username = username
+            #session['logined'] = True
+            #session['username'] = username
             raise web.seeother('/admin')
         else:
             return render.admin.login(errors)
+
+class Logout(object):
+
+    def GET(self):
+        #session['logined'] = False
+        #session['username'] = ""
+        session.logined = False
+        session.username = ""
+        session.kill()
+        raise web.seeother('/admin/login')
 
 class Register(object):
     def GET(self):
