@@ -235,6 +235,18 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +55 ~/.vim/README
+badd +1 ~/sourcecode/python/tpbmirror-read-only/config/settings.py
+badd +12 ~/sourcecode/python/tpbmirror-read-only/config/url.py
+badd +11 ~/sourcecode/python/tpbmirror-read-only/controllers/view.py
+badd +1 ~/sourcecode/python/tpbmirror-read-only/models/mirrordb.py
+badd +1 ~/sourcecode/python/tpbmirror-read-only/templates/index.html
+badd +21 ~/sourcecode/python/tpbmirror-read-only/templates/view.html
+badd +3 ~/sourcecode/python/tpbmirror-read-only/templates/hottype.html
+badd +365 ~/.vimrc
+badd +7 ~/sourcecode/python/tpbmirror-read-only/templates/header.html
+badd +54 ~/sourcecode/python/tpbmirror-read-only/memcached-on-dotcloud/README.rst
+badd +49 ~/sourcecode/python/tpbmirror-read-only/utils/fetchdouban.py
 badd +158 ~/sourcecode/python/webpy.github.com/docs/0.3/tutorial.md
 badd +19 ~/projects/djangoprojects/mysite/mysite/view.py
 badd +12 ~/projects/djangoprojects/mysite/mysite/urls.py
@@ -244,37 +256,44 @@ badd +61 ~/vimwiki/Chapter\ 3\ 视图和URL配置.wiki
 badd +10 ~/.vim/bundle/vimwiki/ftplugin/vimwiki.vim
 badd +18 ~/.vim/bundle/vimwiki/plugin/vimwiki.vim
 badd +1 ~/vimwiki/Chapter\ 4\ 模板.wiki
-badd +1 controllers/aplus.py
+badd +240 controllers/aplus.py
 badd +2 templates/todo/edit.html
 badd +39 templates/index.html.bk
 badd +6 templates/header.html
-badd +21 config/url.py
+badd +28 config/url.py
 badd +13 templates/aplus/login.html
 badd +2 templates/index.html
-badd +161 static/sql/ap.sql
+badd +230 static/sql/ap.sql
 badd +1 ~/vimwiki/diary/2012-04-23.wiki
 badd +1 ~/vimwiki/diary/diary.wiki
 badd +5 templates/aplus/courseDetail.html
-badd +365 ~/.vimrc
 badd +2 templates/foot.html.bk
 badd +12 templates/header.html.bk
 badd +7 templates/aplus/courseList.html
 badd +1 ~/sourcecode/python/simple-todo-read-only/config/url.py
 badd +2 /var/www/redditriver/config/riverconfig.py
-badd +12 ~/sourcecode/python/tpbmirror-read-only/config/url.py
 badd +274 /var/www/redditriver/web/redditriver.py
 badd +1 /var/www/redditriver/web/templates/about.tpl.html
-badd +11 ~/sourcecode/python/tpbmirror-read-only/controllers/view.py
-badd +1 ~/sourcecode/python/tpbmirror-read-only/config/settings.py
-badd +16 config/settings.py
+badd +20 config/settings.py
 badd +1 ~/sourcecode/python/tpbmirror-read-only/controllers/daemon.py
-badd +49 ../../sourcecode/python/tpbmirror-read-only/utils/fetchdouban.py
 badd +1 templates/submit.html
-badd +0 templates/aplus/newCourse.html
-badd +7 templates/aplus/newTeacher.html
-badd +0 templates/aplus/newActivity.html
+badd +1 templates/aplus/newCourse.html
+badd +1 templates/aplus/newTeacher.html
+badd +1 templates/aplus/newActivity.html
 badd +4 ~/vimwiki/HowTos.wiki
-badd +10 ~/vimwiki/MySQLHowTos.wiki
+badd +13 ~/vimwiki/MySQLHowTos.wiki
+badd +24 templates/admin/newActivity.html
+badd +12 templates/admin/index.html
+badd +44 templates/admin/newCourse.html
+badd +1 templates/createnew.html
+badd +1 templates/admin/login.html
+badd +2 templates/admin/newTeacher.html
+badd +2 templates/layout.html
+badd +4 templates/admin/editTeacher.html
+badd +46 templates/index/index.html
+badd +11 templates/footer.html
+badd +13 static/sql/user.sql
+badd +0 templates/admin/register.html
 args controllers/aplus.py
 edit controllers/aplus.py
 set splitbelow splitright
@@ -403,13 +422,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 64 - ((16 * winheight(0) + 13) / 26)
+let s:l = 219 - ((15 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-64
-normal! 018l
-tabedit templates/aplus/newTeacher.html
+219
+normal! 038l
+tabedit templates/admin/register.html
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -496,6 +515,124 @@ setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'html'
+setlocal syntax=html
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=500
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 9 - ((8 * winheight(0) + 13) / 26)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+9
+normal! 04l
+tabedit templates/admin/login.html
+set splitbelow splitright
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+argglobal
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal cindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
+setlocal commentstring=<!--%s-->
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'xhtml'
+setlocal filetype=xhtml
+endif
+setlocal foldcolumn=0
+set nofoldenable
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=HtmlIndentGet(v:lnum)
+setlocal indentkeys=o,O,*<Return>,<>>,{,}
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,$
+setlocal keywordprg=
+set linebreak
+setlocal linebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
 setlocal shiftwidth=2
 setlocal noshortname
 setlocal smartindent
@@ -508,10 +645,10 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'html'
-setlocal syntax=html
+if &syntax != 'xhtml'
+setlocal syntax=xhtml
 endif
-setlocal tabstop=2
+setlocal tabstop=8
 setlocal tags=
 setlocal textwidth=500
 setlocal thesaurus=
@@ -521,13 +658,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 36 - ((17 * winheight(0) + 13) / 26)
+let s:l = 20 - ((18 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-36
-normal! 023l
-tabnext 2
+20
+normal! 04l
+tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif

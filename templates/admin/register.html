@@ -1,0 +1,42 @@
+$def with(errors=None)
+
+$#$if errors:
+$#    <p class="error">错误：$errors</p>
+
+<form method="post" action="/admin/register">
+
+    <fieldset>
+        <legend>注册用户</legend>
+        <div class="error"
+            $if errors == None: 
+                style="display: none"
+            $else:
+                style="color:red"
+            >
+            <p class="error">错误：</p>
+            $if errors != None:
+                $for error in errors:
+                     <p>$error</p>
+        </div>
+        <div class="row" id="form_username_container">
+            <label for="form_username">用户名:</label>
+            <input type="text" id="form_username" name="username" value="" />
+        </div>
+        <div class="row" id="form_email_container">
+            <label for="form_email">邮箱:</label>
+            <input type="text" id="form_email" name="email" value="" />
+        </div>
+        <div class="row" id="form_passwd_container">
+            <label for="form_passwd">密码:</label>
+            <input type="password" id="form_passwd" name="passwd" value="" />(至少7位)
+        </div>
+        <div class="row" id="form_repasswd_container">
+            <label for="form_repasswd">再次密码:</label>
+            <input type="password" id="form_repasswd" name="repasswd" value="" />
+        </div>
+        <div class="submit">
+            <input type="submit" value="注册" />
+        </div>
+    </fieldset>
+</form>
+

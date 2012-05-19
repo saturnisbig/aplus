@@ -1,7 +1,7 @@
 $def with(stages, bols, schools, teacher, stage_id=None, bol_id=None, school_id=None, error=None)
 $#$def with(teacher_name, teacher_intro, teacher_style, teacher_method)
 
-<form action="/admin/teacher/edit" method="post" accept-charset="utf-8">
+<form action="/admin/teacher/$teacher.teacher_id/edit" method="post" accept-charset="utf-8">
   $if error:
     <div class="error">
       <em>$error</em>

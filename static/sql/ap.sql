@@ -214,3 +214,26 @@ CREATE TABLE IF NOT EXISTS `aplus_case` (
 
 INSERT INTO `aplus_case` VALUES ('1', '', '0', '2011-06-03 06:08:10');
 */
+
+-- --------------------------------------------------------
+-- 管理员信息表
+-- --------------------------------------------------------
+CREATE TABLE users(
+  user_id serial NOT NULL,
+  username varchar(255) NOT NULL,
+  password varchar(32) NOT NULL,
+  user_type varchar(20) NOT NULL,
+  ts_created datetime NOT NULL,
+  ts_last_login datetime,
+  PRIMARY KEY (user_id),
+  unique (username)
+)ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE user_profile(
+  user_id       bigint unsigned   NOT NULL,
+  profile_key   varchar(255)      NOT NULL,
+  profile_value text              NOT NULL,
+
+  PRIMARY KEY (user_id, profile_key),
+  FOREIGN KEY (user_id) REFERENCES users (user_id)
+)ENGINE = InnoDB DEFAULT CHARSET = utf8;

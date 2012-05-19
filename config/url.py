@@ -21,6 +21,8 @@ urls = (
     '/admin/(.*)/new',      pre_fix + 'aplus.New',
     '/admin/(.*)/(\d+)/edit',     pre_fix + 'aplus.Edit',
     '/admin/(.*)/(\d+)/delete',   pre_fix + 'aplus.Delete',
+    '/admin/register',      pre_fix + 'aplus.Register',
+    '/admin/login',         pre_fix + 'aplus.Login',
     '/todo/new',            pre_fix + 'todo.New',
     '/todo/(\d+)',          pre_fix + 'todo.View',
     '/todo/(\d+)/edit',     pre_fix + 'todo.Edit',

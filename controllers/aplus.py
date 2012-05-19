@@ -3,6 +3,7 @@
 import web
 from config import settings
 from datetime import datetime
+import re, hashlib
 
 render = settings.render
 db = settings.db
@@ -14,6 +15,28 @@ def get_by_id(tb, id):
         return False
     return s[0]
 
+def user_exists(username):
+    s = db.select('users', where='username=$username', vars=locals())
+    if s:
+        return True
+    else:
+        return False
+
+def is_valid_email(email):
+    email_regex = '^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9]+)*@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9]{2,32}$'
+    if re.search(email_regex, email):
+        return True
+    else:
+        return False
+
+def is_valid_username(username):
+    username_regex = '^[_a-zA-Z0-9]{5,30}$'
+    # 4-16 char or 2-8 cn char, not all number or zimu
+    # ^([\u4e00-\u9fa5]{2,8})$|^(?!\d+$)(\w{3,15}[a-z0-9])$
+    if re.search(username_regex, username):
+        return True
+    else:
+        return False
 
 class Admin(object):
 
@@ -133,16 +156,30 @@ class Edit:
         #    return render.error('没找到这条记录', None)
         #return render.todo.edit(todo)
 
-    def POST(self, id):
-        todo = get_by_id(id)
-        if not todo:
-            return render.error('没找到这条记录', None)
-        i = web.input()
-        title = i.get('title', None)
-        if not title:
-            return render.error('标题是必须的', None)
-        db.update(tb, title=title, where='id=$id', vars=locals())
-        return render.error('修改成功！', '/')
+    def POST(self, type, id):
+        if type == 'teacher':
+            tb = 'aplus_teacher'
+            i = web.input()
+            stage_id = i.get('stage_id', None)
+            bol_id = i.get('bol_id', None)
+            school_id = i.get('school_id', None)
+            teacher_name = i.get('teacher_name', None)
+            teacher_intro = i.get('teacher_intro', None)
+            teacher_style = i.get('teacher_style', None)
+            teacher_method = i.get('teacher_method', None)
+            db.update(tb, stage_id=stage_id, bol_id=bol_id, school_id=school_id, teacher_name=teacher_name, \
+                      teacher_intro=teacher_intro, teacher_style=teacher_style, teacher_method=teacher_method, \
+                      where='teacher_id=$id', vars=locals())
+            raise web.seeother('/teachers')
+        #todo = get_by_id(id)
+        #if not todo:
+        #    return render.error('没找到这条记录', None)
+        #i = web.input()
+        #title = i.get('title', None)
+        #if not title:
+        #    return render.error('标题是必须的', None)
+        #db.update(tb, title=title, where='id=$id', vars=locals())
+        #return render.error('修改成功！', '/')
 
 class Delete:
 
@@ -168,7 +205,75 @@ class Login(object):
         return render.admin.login()
 
     def POST(self):
-        pass
+        i = web.input()
+        errors = []
+        username, passwd = i.username, i.passwd
+        if len(username) == 0 or len(passwd) == 0:
+            errors.append(u'请输入用户名和密码。')
+            #return render.admin.login()
+        else:
+            m = hashlib.md5()
+            m.update(passwd+settings.secret_key)
+            passwd_md5 = m.hexdigest()
+            result = db.select('users', where="username=$username and passwd=$passwd_md5", vars=locals())
+            if not result:
+                #return render.admin.index('course', "")
+                errors.append(u'用户名或密码错误。')
+
+        if len(errors) == 0:
+            user_id = result[0].user_id
+            last_login = datetime.now()
+            db.update('users', where="user_id=$user_id", ts_last_login=last_login, vars=locals())
+            raise web.seeother('/admin')
+        else:
+            return render.admin.login(errors)
+
+class Register(object):
+    def GET(self):
+        return render.admin.register()
+
+    def POST(self):
+        i = web.input()
+        errors = []
+        username, email, passwd, repasswd = i.username, i.email, i.passwd, i.repasswd
+        username = i.get('username', None)
+        if (len(username) == 0):
+            errors.append(u'用户名不能为空。')
+        elif not is_valid_username(username):
+            errors.append(u'用户名无效。')
+        elif (user_exists(username)):
+            errors.append(u'用户名已存在，请使用别的。')
+        else:
+            email = i.get('email', None)
+
+        if email == None:
+            errors.append(u'电子邮件不能为空。')
+        elif not is_valid_email(email):
+            errors.append(u'电子邮件格式错误。')
+        else:
+            passwd, repasswd = i.passwd, i.repasswd
+
+        if (len(passwd) < 7):
+            errors.append(u'密码至少要七位。')
+        elif cmp(passwd, repasswd) != 0:
+            errors.append(u'两次密码不同。')
+        else:
+            m = hashlib.md5()
+            m.update(passwd+settings.secret_key)
+            passwd_md5 = m.hexdigest()
+
+        if len(errors) == 0:
+            ts_created = datetime.now()
+            user_id = db.insert('users', username=username, passwd=passwd_md5, ts_created=ts_created)
+            #result = db.select('users', what='user_id', where='username=$username', vars=locals())
+            #user_id = result[0].user_id
+            if user_id:
+                db.insert('user_profile', user_id=user_id, profile_key='email', profile_value=email)
+            raise web.seeother('/admin/registerComplete')
+        else:
+            # errors happens while registering
+            return render.admin.register(errors)
+
 
 
 class About(object):

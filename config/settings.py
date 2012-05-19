@@ -17,6 +17,7 @@ config = web.storage(
     perpage = 10,
 )
 
+secret_key = 'aplus_by_teddy'
 
 web.template.Template.globals['config'] = config
 web.template.Template.globals['render'] = render
