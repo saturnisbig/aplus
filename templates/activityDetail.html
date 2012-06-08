@@ -1,0 +1,13 @@
+<%inherit file="base.html" />
+
+<%def name="title()">${activity.activity_title}</%def>
+
+<div id="activityDetail">
+% if activity:
+<h2>${activity.activity_title}</h2>
+<p>${activity.activity_postDate}</p>
+<p>${activity.activity_content}</p>
+% else:
+<p>没有活动信息</p>
+% endif
+</div>

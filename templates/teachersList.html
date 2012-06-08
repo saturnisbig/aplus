@@ -1,0 +1,15 @@
+<%inherit file="base.html" />
+
+<%def name="title()">教师列表</%def>
+
+<div id="teachersList">
+    % if teachers:
+    <ul>
+        % for teacher in teachers:
+        <li><a href="/teachers/$teacher.teacher_id">$teacher.teacher_name</a></li>
+        % endfor
+    </ul>
+    % else:
+    <p>目前没有老师</p>
+    % endif
+</div>

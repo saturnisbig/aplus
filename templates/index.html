@@ -1,7 +1,6 @@
-$def with (activities=None)
-$:render.header() <!-- render header. -->
-$#<!--$def with (grades, activities=None)-->
-$#<!--$:render.header(grades) -->
+<%inherit file="base.html" />
+
+<%def name="title()">首页</%def>
 
 <div id="content">
   <div id="news">
@@ -17,8 +16,11 @@ $#<!--$:render.header(grades) -->
   <div id="activity">
     <h4>最新活动</h4>
     <ul class="title">
-      $for activity in activities:
-        <li><a href="/activities/$activity.activity_id">$activity.activity_title</a></li>
+        % if activities:
+            % for activity in activities:
+            <li><a href="/activities/${activity.activity_id}">${activity.activity_title}</a></li>
+            % endfor
+        % endif
       <!--
       <li><a href="#">A佳教育秋季班火热报名中</a></li>
       <li><a href="#">A佳教育秋季班火热报名中</a></li>
@@ -43,6 +45,4 @@ $#<!--$:render.header(grades) -->
       的经营理念和“品质第一、学生满意、家长放心”的办学宗旨，是厦门最具成长力的补习学校，更是消费者最喜爱的教育培训机构。</p>
   </div>
 </div>
-</div> <!-- main ends. -->
 
-$:render.footer() <!-- render footer. -->

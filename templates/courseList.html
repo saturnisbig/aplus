@@ -1,0 +1,16 @@
+<%inherit file="base.html" />
+
+<%def name="title()">课程列表</%def>
+
+<div id="courseList">
+    % if courses:
+    <ul>
+        % for course in courses:
+        <li><a href="/courses/${course.course_id}">${course.course_title}</a></li>
+        % endfor
+    </ul>
+    % else:
+    <p>没有课程</p>
+    % endif
+</div>
+

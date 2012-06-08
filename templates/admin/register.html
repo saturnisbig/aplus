@@ -1,9 +1,87 @@
 $def with(errors=None)
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
+Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>注册</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <style type="text/css" media="screen">
+            #error {
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+        <script type="text/javascript" language="javascript" charset="utf-8">
+        //<![CDATA[
+        var errors = "";
+function checkUsername() {
+    var username = document.getElementById("form_username").value;
+    if (username == "") {
+        errors = "<li>用户名不能为空</li>";
+        return false;
+    }
+    if (username.length < 6) {
+        errors = "<li>用户名长度大于6</li>";
+        return false;
+    }
+    return true;
+}
+function checkEmail() {
+    var email = document.getElementById("form_email").value;
+    if (email == "") {
+        errors = "<li>邮箱地址不能为空</li>";
+        return false;
+    }
+    if (email.indexOf('@') == -1) {
+        errors = "<li>邮箱地址应该包含'@'</li>";
+        return false;
+    }
+    if (email.indexOf('.') == -1) {
+        errors = "<li>邮箱地址应该包含'.'</li>";
+        return false;
+    }
+    return true;
+
+}
+function checkPasswd() {
+    var pass1, pass2;
+    pass1 = document.getElementById("form_passwd").value;
+    pass2 = document.getElementById("form_repasswd").value;
+    if (pass1 == "" || pass2 == "") {
+        errors = "<li>密码填写不完整</li>";
+        return false;
+    }
+    if (pass1.length < 6) {
+        errors = "<li>密码长度必须大于7</li>";
+        return false;
+    }
+    if (pass1 != pass2) {
+        errors = "<li>两次密码不符</li>";
+        return false;
+    }
+    return true;
+
+}
+function validateForm() {
+    if (checkUsername() && checkEmail() && checkPasswd()) {
+        return true;
+    } else {
+        var errorMsg = document.getElementById("error");
+        errorMsg.innerHTML = errors;
+        return false;
+    }
+}
+        //]]>
+        </script>
+    </head>
+    <body>
 $#$if errors:
 $#    <p class="error">错误：$errors</p>
-
-<form method="post" action="/admin/register">
+<ul id="error"></ul>
+<form name="form_register" onSubmit="return validateForm()" method="post" action="/admin/register">
 
     <fieldset>
         <legend>注册用户</legend>
@@ -40,3 +118,6 @@ $#    <p class="error">错误：$errors</p>
     </fieldset>
 </form>
 
+        
+    </body>
+</html>

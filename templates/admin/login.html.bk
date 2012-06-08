@@ -1,0 +1,44 @@
+$def with(errors=None)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
+Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>管理员登录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+  </head>
+
+  <body>
+    <div class="login">
+      <form action="/admin/login" method="post" accept-charset="utf-8">
+        <fieldset>
+          <legend>登录</legend>
+          <div class="error"
+            $if errors == None:
+              style="display: none"
+            $else:
+              style="color:red"
+            >
+            <p class="error">错误：</p>
+            $if errors != None:
+              <ul>
+              $for error in errors:
+                <li>$error</li>
+              </ul>
+          </div>
+          <div class="row" id="form_username_container">
+            <label for="form_username">用户名:</label>
+            <input type="text" id="form_username" name="username" value="" />
+          </div>
+          <div class="row" id="form_passwd_container">
+            <label for="form_passwd">密码:</label>
+            <input type="password" id="form_passwd" name="passwd" value="" />
+          </div>
+          <p><input type="submit" value="登录 &rarr;"/></p>
+        </fieldset>
+      </form>
+    </div>
+
+  </body>
+</html>

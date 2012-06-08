@@ -18,7 +18,7 @@ a:hover {
   text-decoration: underline;
 }
 
-#container {
+#contain {
   width: 960px;
   /* height: 100px;
   height: 768px;*/
@@ -26,8 +26,8 @@ a:hover {
   border: 1px solid green;
   /*  position: relative;*/
 }
-/* header part */
-#header {
+/* head part */
+#head {
   width:940px;
   height: 120px;
   margin: 0 auto;
@@ -204,7 +204,7 @@ background-color: #226699;
   float: left;
 }
 
-#footer {
+#foot {
   width: 940px;
   height: 148px;
   /*border: 1px solid gray;
@@ -216,27 +216,27 @@ background-color: #226699;
   left: 10px;*/
 position: relative;
 }
-#footer .third-nav {
+#foot .third-nav {
   width: 940px;
   background-color: #f8f8f8;
   border: 1px solid #dddddd;
   float: left;
 }
-#footer .third-nav ul li {
+#foot .third-nav ul li {
   width: 120px;
   list-style: none;
   font-size: 13px;
   float: left;
   margin: 0 50px;
 }
-#footer .third-nav ul li ul li{
+#foot .third-nav ul li ul li{
   font-size: 11px;
   line-height: 20px;
   clear: left;
   margin: 0px;
   text-indent: 8px;
 }
-#footer .copyright {
+#foot .copyright {
   width: 940px;
   font-size: 12px;
   color: gray;

@@ -1,0 +1,9 @@
+<%inherit file="base.html" />
+
+<%def name="title()">${course.course_title}</%def>
+
+
+% if course:
+<h3>${course.course_title}</h3>
+<p>${course.course_intro}</p>
+% endif

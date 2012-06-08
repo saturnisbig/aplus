@@ -15,7 +15,7 @@ urls = (
     '/activities',          pre_fix + 'aplus.Activities',
     '/activities/(\d+)',    pre_fix + 'aplus.ActivitiesView',
     '/contact',             pre_fix + 'aplus.Contact',
-    '/login',               pre_fix + 'aplus.Login',
+    '/upload',              pre_fix + 'aplus.Upload',
     '/admin',               pre_fix + 'aplus.Admin',
     '/admin/(.*)/',         pre_fix + 'aplus.View',
     '/admin/(.*)/new',      pre_fix + 'aplus.New',
