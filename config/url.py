@@ -1,33 +1,20 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import admin
+
 pre_fix = 'controllers.'
 
 urls = (
-    '/',                    pre_fix + 'aplus.Index',
-    '/about',               pre_fix + 'aplus.About',
-    '/courses',             pre_fix + 'aplus.Courses',
-    '/courses/(\d+)',       pre_fix + 'aplus.CoursesView',
-    #'/grade',               pre_fix + 'aplus.Grade',
-    '/grades/(\d+)',        pre_fix + 'aplus.GradesView',
-    '/teachers',            pre_fix + 'aplus.Teachers',
-    '/teachers/(\d+)',      pre_fix + 'aplus.TeachersView',
-    '/activities',          pre_fix + 'aplus.Activities',
-    '/activities/(\d+)',    pre_fix + 'aplus.ActivitiesView',
-    '/contact',             pre_fix + 'aplus.Contact',
-    '/upload',              pre_fix + 'aplus.Upload',
-    '/admin',               pre_fix + 'aplus.Admin',
-    '/admin/(.*)/',         pre_fix + 'aplus.View',
-    '/admin/(.*)/new',      pre_fix + 'aplus.New',
-    '/admin/(.*)/(\d+)/edit',     pre_fix + 'aplus.Edit',
-    '/admin/(.*)/(\d+)/delete',   pre_fix + 'aplus.Delete',
-    '/admin/register',      pre_fix + 'aplus.Register',
-    '/admin/login',         pre_fix + 'aplus.Login',
-    '/admin/logout',        pre_fix + 'aplus.Logout',
-    '/todo/new',            pre_fix + 'todo.New',
-    '/todo/(\d+)',          pre_fix + 'todo.View',
-    '/todo/(\d+)/edit',     pre_fix + 'todo.Edit',
-    '/todo/(\d+)/delete',   pre_fix + 'todo.Delete',
-    '/todo/(\d+)/finish',   pre_fix + 'todo.Finish',
-
+    '/',                     pre_fix + 'views.index',
+    '/about/',               pre_fix + 'views.about',
+    '/courses/',             pre_fix + 'views.courses',
+    '/course/(\d+)/',       pre_fix + 'views.courseView',
+    '/grade/(\d+)/',        pre_fix + 'views.gradeView',
+    '/teachers/',            pre_fix + 'views.teachers',
+    '/teacher/(\d+)/',      pre_fix + 'views.teacherView',
+    '/activities/',          pre_fix + 'views.activities',
+    '/activity/(\d+)/',    pre_fix + 'views.activityView',
+    '/contact/',             pre_fix + 'views.contact',
+    '/admin',                admin.app_admin,
 )

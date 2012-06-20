@@ -1,12 +1,28 @@
 <%inherit file="base.html" />
 
 <%def name="title()">课程列表</%def>
+<%def name="path()"> > <lable><a href="/courses/">课程介绍</a></lable></%def>
+
+<div class="courseFilter 1bd">
+    <div class="link 1bd">
+        <label for="season">季度：</label>
+    </div>
+    <div class="link 1bd">
+        <label for="grade">年级：</label>
+    </div>
+    <div class="link 1bd">
+        <label for="bol">学科：</label>
+    </div>
+    <div class="link 1bd">
+    <label for="type">类型：</label>
+    </div>
+</div>
 
 <div id="courseList">
     % if courses:
     <ul>
         % for course in courses:
-        <li><a href="/courses/${course.course_id}">${course.course_title}</a></li>
+        <li><a href="/course/${course.course_id}/">${course.course_title}</a></li>
         % endfor
     </ul>
     % else:

@@ -1,0 +1,23 @@
+<%inherit file="base.html" />
+<%def name="title()">教师管理</%def>
+
+<table class="teacherList">
+    <tr>
+        <th>No.</th>
+        <th>教师姓名</th>
+        <th>操作</th>
+    </tr>
+    % for i, teacher in enumerate(teachers):
+        <tr>
+            <td>${ (page-1) * 10 + i +1 }</td>
+            <td>${ teacher.teacher_name }</td>
+            <td>
+                <a href="/admin/teacher/edit/${teacher.teacher_id}">修改</a>
+                <a href="/admin/teacher/del/${teacher.teacher_id}">删除</a>
+            </td>
+        </tr>
+    % endfor
+</table>
+
+    
+</table>

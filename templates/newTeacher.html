@@ -1,0 +1,119 @@
+$def with (stages=None, bols=None, schools=None, error=None, ELT="$")
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
+Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>添加老师</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+<script type="text/javascript" language="javascript" charset="utf-8">
+//<![CDATA[
+function checkNew() {
+    //var form = document.getElementById('form_teacher');
+    var form = document.form_teacher;
+    teacher_name = form.teacher_name.value;
+    if (teacher_name == "") {
+        alert("teacher name not null?");
+        return false;
+    }
+    return true;
+}
+/*
+$("#form_teacher").submit(function() {
+    if ($("input#teacher_name").val() == "") {
+        alert("teacher name not null?");
+        return false;
+    }
+    return false;
+});
+*/
+function changeBol() {
+    //var stage = document.getElementById("stage_name");
+    var stageName = document.form_teacher.stage_id.value;
+    var bolList = new Array();
+    var basicBol = new Array();
+    basicBol = ['语文', '数学', '英语'];
+    bolList['1'] = basicBol;
+    bolList['2'] = bolList['1'].concat(['物理', '化学', '政治']);
+    bolList['3'] = bolList['2'].concat(['生物', '历史', '地理']);
+    document.form_teacher.bol_id.options.length = 0;
+    var newOption1;
+    for (var j in bolList[stageName]) {
+        newOption1 = new Option(bolList[stageName][j], parseInt(j)+1);
+        document.form_teacher.bol_id.options.add(newOption1);
+    }
+
+}
+//]]>
+</script>
+    </head>
+
+    <body>
+<form name="form_teacher" onSubmit="return checkNew()" action="/admin/teacher/new" method="post" accept-charset="utf-8">
+  $if error:
+    <div class="error">
+      <em>$error</em>
+    </div>
+
+  <fieldset>
+      <legend>添加教师</legend>
+    <div class="row" id="teacher_name_container">
+      <label for="teacher_name">教师姓名：</label>
+      <input type="text" name="teacher_name" value="" id="teacher_name"/>
+      $#include some error information tpl.
+    </div>
+
+    <div class="row" id="stage_name_container">
+      <label for="stage_name">教授年级：</label>
+      <select name="stage_id" id="stage_name" onChange="changeBol()">
+        $#$for stage in stages:
+        $#  <option value="$stage.stage_name">$stage.stage_name</option>
+        <option>--选择年级--</option>
+        <option value="1">小学</option>
+        <option value="2">初中</option>
+        <option value="3">高中</option>
+      </select>
+    </div>
+
+    <div class="row" id="bol_name_container">
+      <label for="bol_name">教授学科：</label>
+      <select name="bol_id" id="bol_name">
+        $#$for bol in bols:
+        $#    <option value="$bol.bol_id">$bol.bol_name</option>
+        <option>--选择学科--</option>
+      </select>
+    </div>
+
+    <div class="row" id="school_name_container">
+      <label for="school_name">所属校区：</label>
+      <select name="school_id" id="school_name">
+        $for school in schools:
+          <option value="$school.school_id">$school.school_name</option>
+      </select>
+    </div>
+
+      <div id="teacher_intro_container" class="row">
+        <label for="teacher_intro">教师简介：</label>
+        <textarea name="teacher_intro" rows="8" cols="40"></textarea>
+        $#include some error infomation.
+      </div>
+
+      <div id="teacher_style_container" class="row">
+        <label for="teacher_style">教学风格：</label>
+        <textarea name="teacher_style" rows="4" cols="40"></textarea>
+        $#include some error infomation.
+      </div>
+
+      <div id="teacher_method_container" class="row">
+        <label for="teacher_method">授课方法：</label>
+        <textarea name="teacher_method" rows="8" cols="40"></textarea>
+        $#include some error infomation.
+      </div>
+    </fieldset>
+
+    <p><input type="submit" value="添加&rarr;"/></p>
+  </form>
+    </body>
+</html>

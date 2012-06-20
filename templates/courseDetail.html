@@ -2,8 +2,11 @@
 
 <%def name="title()">${course.course_title}</%def>
 
-
-% if course:
-<h3>${course.course_title}</h3>
+<div id="courseDetail"
+<h1>${course.course_title}</h1>
+% if course.course_intro:
 <p>${course.course_intro}</p>
+% else:
+<p>没有课程介绍</p>
 % endif
+</div>

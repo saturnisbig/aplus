@@ -1,11 +1,9 @@
-$def with(teacher)
+<%inherit file="base.html" />
+<%def name="title()">关于${teacher.teacher_name}<%def>
 
-$:render.header()
-
-$#$for teacher in teachers:
-  <p>$teacher.teacher_name</p>
-  <p>$teacher.teacher_intro</p>
-  <p>$teacher.teacher_method</p>
-  <p>$teacher.teacher_style</p>
-
-$:render.footer()
+<div id="teacherDetail">
+    <h1>${teacher.teacher_name}</h1>
+    <p>${teacher.teacher_intro}</p>
+    <p>${teacher.teacher_style}</p>
+    <p>${teacher.teacher_method}</p>
+</div>

@@ -3,7 +3,7 @@
 import web
 # import the Mako template engine
 from web.contrib.template import render_mako
-from code import session
+from aplus import session
 import cgi, os
 
 db = web.database(dbn='mysql', db='aplus', user='root', pw='root')
@@ -17,6 +17,11 @@ render = render_mako(
     output_encoding = 'utf-8',
     )
 
+render_admin = render_mako (
+    directories = [os.getcwd() + '/templates/admin'],
+    input_encoding = 'utf-8',
+    output_encoding = 'utf-8',
+    )
 
 web.config.debug = True
 

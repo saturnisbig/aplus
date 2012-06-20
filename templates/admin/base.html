@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>${self.title()} - 后台管理</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <link href="/static/styles/reset.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="/static/styles/index/style.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+    <body>
+        <div id="contain"> <!-- contain starts. -->
+
+            <div id="head"> <!-- head starts. -->
+                <div id="logo">
+                    <h1><a href="/" img alt="首页" src="logo.png" /></a></h1>
+                    <h1>A佳教育</h1>
+                    <p>您身边的补习好帮手</p>
+                </div>
+            </div> <!-- head ends. -->
+
+            <div id="main"> <!-- main starts. -->
+                <div id="main-nav">
+                    <ul>
+                        <li><a href="/admin/courses/" class="tn">课程管理</a></li>
+                        <li><a href="/admin/schools/" class="tn">校区管理</a></li>
+                        <li><a href="/admin/activities/" class="tn">活动管理</a></li>
+                        <li><a href="/admin/teachers/" class="tn">教师管理</a></li>
+                        <li><a href="/admin/about/" class="tn">关于管理</a></li>
+                    </ul>
+                </div>
+
+                <div id="content">
+                    ${self.body() }
+                </div>
+            </div> <!-- main ends. -->
+
+            <div id="foot"> <!-- foot starts. -->
+                <div class="copyright">
+                    Copyright &copy; 2008-2011 A佳教育 All Rights Reserved
+                </div>
+            </div> <!-- foot ends. -->
+        </div> <!-- contain ends. -->
+    </body>
+</html>
+
