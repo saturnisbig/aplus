@@ -17,8 +17,8 @@ inoremap <Plug>ZenCodingExpandAbbr u:call zencoding#expandAbbr(0,"")a
 inoremap <silent> <S-Tab> =BackwardsSnippet()
 inoremap <C-Tab> 	
 map  h
-xmap <NL> j
 nmap <NL> j
+xmap <NL> j
 snoremap <silent> <NL> i<Right>=TriggerSnippet()
 omap <NL> j
 map  k
@@ -97,10 +97,10 @@ snoremap \ b<BS>\
 snoremap ^ b<BS>^
 snoremap ` b<BS>`
 nmap gx <Plug>NetrwBrowseX
-xmap <Right> :bn
-nmap <Right> :bn
-xmap <Left> :bp
 nmap <Left> :bp
+xmap <Left> :bp
+nmap <Right> :bn
+xmap <Right> :bn
 snoremap <Left> bi
 snoremap <Right> a
 snoremap <BS> b<BS>
@@ -178,6 +178,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 set autoindent
 set autoread
+set autowriteall
 set background=dark
 set backspace=eol,start,indent
 set cindent
@@ -233,6 +234,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +1 ~/.vim/README
 badd +1 /etc/alternatives/vi
 badd +11 aplus.py
 badd +1 ~/sourcecode/davidblog/davidblog/admin.py
@@ -240,7 +242,6 @@ badd +1 ~/sourcecode/davidblog/davidblog/adminviews.py
 badd +1 ~/sourcecode/davidblog/davidblog/davidblog.py
 badd +1 ~/sourcecode/davidblog/davidblog/models.py
 badd +1 ~/.vimrc
-badd +1 ~/.vim/README
 badd +1 ~/sourcecode/python/tpbmirror-read-only/config/settings.py
 badd +1 ~/sourcecode/python/tpbmirror-read-only/config/url.py
 badd +1 ~/sourcecode/python/tpbmirror-read-only/controllers/view.py
@@ -318,7 +319,7 @@ badd +1 templates/foot.html
 badd +1 static/styles/index/style.css
 badd +9 templates/activitiesList.html
 badd +5 templates/teachersList.html
-badd +1 templates/courseList.html
+badd +11 templates/courseList.html
 badd +1 templates/about.html
 badd +1 templates/activityDetail.html
 badd +1 templates/contact.html
@@ -335,9 +336,11 @@ badd +4 ~/.vim/bundle/snipMate/snippets/python/class.snippet
 badd +1 ~/.vim/bundle/snipMate/snippets/python/import.snippet
 badd +1 ~/.vim/bundle/snipMate/snippets/python/from.snippet
 badd +32 ~/.vim/bundle/zencoding-vim/TUTORIAL
-badd +0 static/styles/style.css
+badd +255 static/styles/style.css
+badd +1 ~/Documents/Wiki/Default/diary/diary.wiki
+badd +0 templates/teacherList.html
 silent! argdel *
-edit templates/courseDetail.html
+edit templates/teacherList.html
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -450,131 +453,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 10 - ((9 * winheight(0) + 13) / 26)
+let s:l = 132 - ((18 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 01l
-tabedit templates/courseList.html
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winheight=1 winwidth=1
-argglobal
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal balloonexpr=
-setlocal nobinary
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal cindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
-setlocal commentstring=<!--%s-->
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'html'
-setlocal filetype=html
-endif
-setlocal foldcolumn=0
-set nofoldenable
-setlocal nofoldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-set foldlevel=1
-setlocal foldlevel=1
-setlocal foldmarker={{{,}}}
-set foldmethod=indent
-setlocal foldmethod=indent
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=HtmlIndentGet(v:lnum)
-setlocal indentkeys=o,O,*<Return>,<>>,{,}
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,$
-setlocal keywordprg=
-set linebreak
-setlocal linebreak
-setlocal nolisp
-set list
-setlocal list
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal smartindent
-setlocal softtabstop=4
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal noswapfile
-setlocal synmaxcol=3000
-if &syntax != 'html'
-setlocal syntax=html
-endif
-setlocal tabstop=4
-setlocal tags=
-setlocal textwidth=500
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-let s:l = 11 - ((10 * winheight(0) + 13) / 26)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-11
-normal! 09l
+132
+normal! 031l
 tabedit static/styles/style.css
 set splitbelow splitright
 set nosplitbelow
@@ -599,6 +483,7 @@ setlocal comments=s1:/*,mb:*,ex:*/
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
+set conceallevel=2
 setlocal conceallevel=0
 setlocal completefunc=
 setlocal nocopyindent
@@ -688,13 +573,13 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 103 - ((11 * winheight(0) + 13) / 26)
+let s:l = 387 - ((18 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-103
-normal! 017l
-tabnext 3
+387
+normal! 0
+tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif

@@ -1,9 +1,51 @@
 <%inherit file="base.html" />
-<%def name="title()">关于${teacher.teacher_name}<%def>
 
-<div id="teacherDetail">
-    <h1>${teacher.teacher_name}</h1>
-    <p>${teacher.teacher_intro}</p>
-    <p>${teacher.teacher_style}</p>
-    <p>${teacher.teacher_method}</p>
-</div>
+<%def name="title()">教师姓名</%def>
+<%def name="path()">
+> <a href="/teacherList/">教师列表</a>
+> <a href="#">teacherName</a>
+</%def>
+
+
+<div id="teacherDetail" class="w760 mt10">
+    <div class="w180 fl">
+        <div id="thumb">
+            <img src="../static/images/zxlu.png" alt="" />
+        </div>
+    </div>
+    <div class="w570 fr">
+        <div id="info">
+            <b>张晓路</b>
+            <br>
+            教授课程：数学
+            <br>
+            <br>
+            教授年级：初中
+            <br>
+            <br>
+            所在校区：松柏校区
+            <br>
+        </div>
+        <div id="intro">
+            <div class="title">
+                <b>教师简介</b>
+            </div>
+            <div class="item">
+                <p>
+                    快乐学习个性化1对1初中数学高级资深教师。拥有丰富的初中数学教学经验，对中考数学有着独到的把握，善于对重点、难点进行归纳、提炼，旁征博引，通俗易懂。课堂风格生动活泼，善于激发学生的学习热情，让学生主动学习，爱上学习。针对每个孩子制定相应的学习计划，在短期内提升学生的学习成绩，所带学生进步率高达99℅！
+                </p>
+            </div>
+        </div>
+        <div id="style">
+            <div class="title">
+                <b>教学风格</b>
+            </div>
+            <div class="item">
+                <p>幽默+耐心+激情四射</p>
+            </div>
+        </div>
+        <div id="method">
+            <div class="title"><b>授课方法：</b></div>
+        </div>
+    </div>
+</div> <!-- teacherDetail ends. -->

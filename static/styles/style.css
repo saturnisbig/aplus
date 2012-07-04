@@ -9,12 +9,12 @@ body {
   line-height: 24px;
   background: url(../images/body-bg.gif) repeat-x scroll 0 0 transparent;
 }
-a {
+a:link, a:visited {
+  color: #666666;
   text-decoration: none;
-  color: #333333;
 }
-a:hover {
-  color: #97bdbf;
+a:hover, a:active {
+  color: #FF6600;
   text-decoration: underline;
 }
 
@@ -23,9 +23,9 @@ a:hover {
   /* height: 100px;
   height: 768px;*/
   margin: 0px auto;
-  border: 1px solid green;
-  padding: 0px;
+  /*border: 1px solid green;*/
   /*  position: relative;*/
+
 }
 /* banner part */
 #banner {
@@ -49,34 +49,43 @@ a:hover {
   height: 120px;
   margin: 0 auto;
   margin-bottom: 10px;
-  border-bottom: 2px dotted #97bdbf;
+  border-bottom: 1px solid #999999;
   position: relative;
 }
 #logo {
   width:180px;
-  background-color: #ffffff;
   height: 80px;
-  border: 1px solid black;
-  background-image: url(../images/aplus-logo.png);
+  background-color: #ffffff;
+  /*background-image: url(../images/aplus-logo.png);
   background-repeat: no-repeat;
-  /*text-indent: -9999px;
+  text-indent: -9999px;
   background-color: #666666;*/
-  padding: 2px 0 0 2px;
-  margin: 0px;
-  float:left;
+padding: 0px;;
+margin: 0px;
+float:left;
 }
-#logo a img {
-  width: 176px;
-  height: 76px;
-  margin: 0px;
-  padding: 0px;
-  border: 1px solid #f8f8f8;
+#logo h1 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family:"Comic Sans MS"; 
 }
 /*
-#logo a:active, #logo a:hover {
-background-color: #226699;
+#logo h1 a:link, #logo h1 a:visited {
+color: #666666;
+}
+#logo h1 a:active, #logo h1 a:hover {
+color: #FF6600;
+text-decoration: underline;
 }
  */
+#logo .desc {
+  font-size: 12px;
+  color: #999999;
+  text-align: center;
+  padding-top: 5px;
+}
 
 #mainNav {
   width: 750px;
@@ -95,13 +104,13 @@ background-color: #226699;
   position: absolute;
   right: 0px;
   top: 40px;
-  */
+   */
 }
 #mainNav ul li {
   /*display: inline;*/
   margin-left: 17px;
   padding-left: 17px;
-  border-left: 2px dotted #97bdbf;
+  border-left: 2px solid #DDDDDD;
   float: left;
   /*float:left;*/
 }
@@ -111,36 +120,38 @@ background-color: #226699;
   margin-left: 10px;
 }
 #mainNav ul li a {
-  color: #97bdbf;
-  font-weight: bold;
   display: block;
 }
 /*
- */
-#mainNav ul li a:active, #mainNav ul li a:hover {
-  color: #336699;
-  text-decoration: underline;
+#mainNav ul li a:link, #mainNav ul li a:visited {
+color: #999999;
 }
+#mainNav ul li a:active, #mainNav ul li a:hover {
+color: #FF6600;
+text-decoration: underline;
+}
+ */
 
 /* main part */
 #main {
-  width: 942px;
-  min-height: 486px;
+  width: 952px;
+  min-height: 764px;
   background: #f8f8f8;
-  border: 1px solid red;
-  float: left;
-  margin: 10px 0px 10px 10px;
-  height: 764px;
+  /*border: 1px solid red;*/
+  margin: 5px auto;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #DDDDDD;
 }
 
 /* main secondaryNav part */
 #secondaryNav {
-  width: 176px;
+  width: 178px;
   font-size: 14px;
   float: left;
-  border: 2px solid #336699;
+  border: 1px solid #336699;
 }
 #secondaryNav p {
+  font-family:"Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti !important;
   height: 30px;
   background-color: #336699;
   color: #f8f8f8;
@@ -153,22 +164,21 @@ background-color: #226699;
   list-style: none;
 }
 #secondaryNav ul li {
-  background: #CCCCCC url(../images/secondary-nav-title-bg.png) no-repeat scroll right center;
+  /*background: #CCCCCC url(../images/secondary-nav-title-bg.png) no-repeat scroll right center;*/
   border-top: 0.5px solid #333;
 }
-#secondaryNav ul li a{
+#secondaryNav ul li a:link, #secondaryNav ul li a:visited {
   display: block;
   color: gray;
   text-indent: 5px;
 }
-#secondaryNav ul li a:hover {
+#secondaryNav ul li a:hover, #secondaryNav ul li a:active {
   background-color: #CCCCCC;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-#path {
-  margin-left: 10px;
-  padding-left: 10px;
-}
 /* main news part */
 #news {
   width: 500px;
@@ -193,14 +203,37 @@ background-color: #226699;
 }
 #news ul li a:active, #news ul li a:hover {
   text-decoration: underline;
-  color: #99CCFF;
+  color: #FF6600;
 }
 
+.path {
+  text-align: left;
+  background-color: #f8f8f8;
+  height: 20px;
+  width: 750px;
+  line-height: 20px;
+  float: left;
+  margin-left: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #DDDDDD;
+}
+.path label {
+  display: inline-block;
+  margin-right: 5px;
+}
+.path label a:link, .path label a:visited {
+  color: #333333;
+}
+#adPic {
+  float: left;
+  margin-left: 10px;
+}
 #activity {
-  width: 226px;
-  height: 150px;
+  width: 240px;
+  height: 200px;
   font-size: 13px;
-  border: 1px solid #333;
+  margin-left: 10px;
   float: left;
 }
 #activity h4 {
@@ -212,22 +245,23 @@ background-color: #226699;
   list-style: none;
   margin-left: 10px;
 }
+
 #activity ul li a:active, #activity ul li a:hover {
   text-decoration: underline;
-  color: #99CCFF;
+  color: #FF6600;
 }
 
 #content {
-  width: 740px;
-  border: 1px solid maroon;
-  margin-left: 10px;
-  float: left;
+  width: 750px;
+  margin-left: 190px;
+  color: #666666;
+  font-family: "宋体","Microsoft YaHei","微软雅黑",Arial,Helvetica,sans-serif;
+  font-size: 12px;
+  position: relative;
+  white-space: pre-wrap;
 }
-#introduction {
-  margin: 10px 0 0 0;
-  width: 510px;
-  border: 1px solid #333;
-  float: left;
+#content h1 {
+  margin: 0px;
 }
 
 #footer {
@@ -237,6 +271,7 @@ background-color: #226699;
   float: left;*/
 clear: left;
 margin-left: 10px;
+padding-top: 20px;
 /*position: absolute;
 bottom: 0;
 left: 10px;*/
@@ -273,9 +308,181 @@ position: relative;
 }
 
 /* courseList page */
-.courseFilter {
-  padding: 0 10px;
+.filter {
+  width: 760px;
+  margin-left: 190px;
 }
-.1bd {
+.filter .link a {
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 5px;
+  white-space: nowrap;
+  color: #666666;
+}
+.filter .link a:hover, .filter .link a:active {
+  background-color: #DDDDDD;
+  text-decoration: none;
+}
+.filter .link label {
+  display: inline-block;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 0 10px;
+  float: left;
+}
+.filter .link a.cur {
+  background-color:#EE6600;
+  color: #FFFFFF;
+}
+
+#courseList {
+  color: #999999;
+  margin-left: 190px;
+}
+.item {
+  padding: 10px 0px;
+}
+#courseList .thumb {
+  background-color: #FFFFFF;
+  float: left;
+  border: 1px solid #DDDDDD;
+  height: 90px;
+  width: 90px;
+  margin: 5px;
+  overflow: hidden;
+  padding: 2px;
+  text-align: center;
+}
+.thumb img {
+  height: 90px;
+  width: 90px;
+}
+#courseList .intro {
+  height: 80px;
+}
+.intro {
+  overflow: hidden;
+  padding: 5px 20px 0 10px;
+}
+.intro b a {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333333;
+}
+.intro a:hover {
+  color: #FF6600;
+}
+.intro img {
+  vertical-align: middle;
+}
+#courseList .link a {
+  float: right;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 2px;
+  background-color: #EE6600;
+  margin-right: 20px;
+}
+#courseList .link a:hover, #courseList .link a:active {
+  color: #333333;
+  text-decoration: none;
+}
+/**
+ * teacherList
+ */
+#teacherList {
+  margin-left: 190px;
+  color: #999999;
+  width: 760px;
+}
+#teacherList .thumb {
+  background-color: #FFFFFF;
+  float: left;
+  border: 1px solid #DDDDDD;
+  height: 90px;
+  width: 90px;
+  margin: 5px;
+  overflow: hidden;
+  padding: 2px;
+  text-align: center;
+}
+#teacherList .intro a {
+  color: #B8860B;
+  padding: 1px;
+}
+#teacherDetail {
+  margin-left: 190px;
+  color: #666666;
+}
+#teacherDetail #thumb img {
+  height: 160px;
+  width: 160px;
+  border: 1px solid #cccccc;
+  text-align: center;
+}
+#info {
+  height: 180px;
+  padding: 5px 0 10px;
+}
+#info b {
+  font-size: 16px;
+  color: #b8860B;
+}
+#teacherDetail #content #intro {
+  float: left;
+}
+.title b {
+  border-left: 4px solid #DD0000;
+  padding-left: 10px;
+}
+.title {
+  font-size: 14px;
+  color: #CC0000;
+  background-color: #F8F8F8;
+  border-bottom: 2px solid #DDDDDD;
+  padding: 0 20px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.b1 {
+  border: 1px solid dotted #CCCCCC;
+}
+.bd1 {
   border-bottom: 1px dotted #CCCCCC;
+}
+.clear {
+  clear: both;
+}
+.box {
+  border: 1px solid #DDDDDD;
+}
+.fr {
+  float: right;
+}
+.fl {
+  float: left;
+}
+.w700 {
+  width: 700px;
+}
+.w380 {
+  width: 380px;
+}
+.w760 {
+  width: 760px;
+}
+.w180 {
+  width: 180px;
+}
+.w570 {
+  width: 570px;
+}
+.filter .link {
+  line-height: 20px;
+  margin: 10px 0;
+  padding-bottom: 5px;
 }

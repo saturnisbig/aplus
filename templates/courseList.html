@@ -1,32 +1,90 @@
 <%inherit file="base.html" />
 
-<%def name="title()">课程列表</%def>
-<%def name="path()"> > <lable><a href="/courses/">课程介绍</a></lable></%def>
+<%def name="title()">课程大全</%def>
+<%def name="path()">
+> <a href="/courseList/">课程大全</a>
+</%def>
 
-<div class="courseFilter 1bd">
-    <div class="link 1bd">
+<div class="filter">
+    <div style="line-height: 30px; height: 30px; background: snow url('../static/images/bg.list.top.png'); padding: 0 10px;">
+        <b class="fl">课程筛选</b>
+        <a href="#" class="fr">重置筛选条件</a>
+    </div>
+    <div class="link bd1 fl">
         <label for="season">季度：</label>
+        <div class="w700 fl">
+            <a href="#" class="cur">全部</a>
+            <a href="#">春季班</a>
+            <a href="#">暑假班</a>
+            <a href="#">秋季班</a>
+            <a href="#">寒假班</a>
+        </div>
     </div>
-    <div class="link 1bd">
+    <div class="link bd1 fl">
         <label for="grade">年级：</label>
+        <div class="w700 fl">
+            <a href="" class="cur">全部</a>
+            <a href="">小学一年级</a>
+            <a href="">小学二年级</a>
+            <a href="">小学三年级</a>
+            <a href="">小学四年级</a>
+            <a href="">小学五年级</a>
+            <a href="">小学六年级</a>
+            <a href="">初中一年级</a>
+            <a href="">初中二年级</a>
+            <a href="">初中三年级（中考）</a>
+            <a href="">高中一年级</a>
+            <a href="">高中二年级</a>
+            <a href="">高中三年级（高考）</a>
+        </div>
     </div>
-    <div class="link 1bd">
+    <div class="link bd1 fl">
         <label for="bol">学科：</label>
+        <div class="w700 fl">
+            <a href="" class="cur">全部</a>
+            <a href="">语文</a>
+            <a href="">数学</a>
+            <a href="">英语</a>
+            <a href="">物理</a>
+            <a href="">化学</a>
+            <a href="">生物</a>
+            <a href="">政治</a>
+            <a href="">地理</a>
+            <a href="">历史</a>
+        </div>
     </div>
-    <div class="link 1bd">
-    <label for="type">类型：</label>
+    <div class="link bd1 fl">
+        <label for="type">类型：</label>
+        <div class="w700 fl">
+            <a href="" class="cur">全部</a>
+            <a href="">同步强化</a>
+            <a href="">提高冲刺</a>
+            <a href="">培优竞赛</a>
+        </div>
     </div>
 </div>
 
-<div id="courseList">
-    % if courses:
-    <ul>
-        % for course in courses:
-        <li><a href="/course/${course.course_id}/">${course.course_title}</a></li>
-        % endfor
-    </ul>
-    % else:
-    <p>没有课程</p>
-    % endif
+<div id="courseList" class="mb20">
+    <div class="w760 bd1 fr item mt10">
+        <div class="thumb">
+            <a href="#" target="_blank" title="小学数学">
+                <img src="../static/images/1-2.png" alt="" />
+            </a>
+        </div>
+        <div class="intro">
+            <b>
+                <a href="#" title="新小六数学">
+                    新小六数学特色班
+                </a>
+            </b>
+            <img src="../static/images/icon.qh.png" alt="" />
+            <br>
+            课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+        </div>
+        <div class="link">
+            <a href="#" target="_blank">
+                查看课程详细信息
+            </a>
+        </div>
+    </div>
 </div>
-

@@ -1,0 +1,12 @@
+<%inherit file="base.html" />
+
+<%def name="title()">${course.course_title}</%def>
+
+<div id="courseDetail"
+<h1>${course.course_title}</h1>
+% if course.course_intro:
+<p>${course.course_intro}</p>
+% else:
+<p>没有课程介绍</p>
+% endif
+</div>

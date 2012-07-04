@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>${self.title()} - A佳教育</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+        <link href="/static/styles/reset.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="/home/teddy/projects/aplus/static/styles/style.css" rel="stylesheet" type="text/css" media="screen" />
+    </head>
+    <body>
+        <div id="container"> <!-- container starts. -->
+            <div id="banner">
+                <ul>
+                    <li><a href="/">A佳教育首页</a></li>
+                    <li><a id="HomePage"  href="javascript:void(0);">设为首页</a></li>
+                    <li>   <a id="enshrine"  href="javascript:void(0);">加入收藏</a></li>
+                    <li><a href="/admin/login/">管理员登录</a></li>
+                </ul>
+            </div>
+
+            <div id="header"> <!-- header starts. -->
+                <div id="logo">
+                    <h1><a href="/" alt="首页">A佳教育</a></h1>
+                    <div class="desc">做最好的中小学补习教育</div>
+                </div>
+
+                <div id="mainNav"> <!-- mainNavstarts -->
+                    <ul>
+                        <li><a href="/" class="home">首页</a></li>
+                        <li><a href="/about/" class="about">学校简介</a></li>
+                        <li><a href="/courses/" class="courses">课程大全</a></li>
+                        <li><a href="/teachers/" class="teachers">名师园地</a></li>
+                        <li><a href="/activities/" class="activities">活动讲座</a></li>
+                        <li><a href="/contact/" class="contact">联系方式</a></li>
+                    </ul>
+                </div>
+            </div> <!-- header ends. -->
+
+            <div id="main"> <!-- main starts. -->
+                <div id="secondaryNav" class="box"> <!-- secondaryNav starts. -->
+                    <p>课程导航</p>
+                    <ul>
+                        <!--<li><a href="/grade/1/">小学一年级</a></li>
+                        <li><a href="/grade/2/">小学二年级</a></li>
+                        <li><a href="/grade/3/">小学三年级</a></li>-->
+                        <li><a href="/grade/4/">小学四年级</a></li>
+                        <li><a href="/grade/5/">小学五年级</a></li>
+                        <li><a href="/grade/6/">小学六年级(小升初)</a></li>
+                        <li><a href="/grade/7/">初中一年级</a></li>
+                        <li><a href="/grade/8/">初中二年级</a></li>
+                        <li><a href="/grade/9/">初中三年级(初升高)</a></li>
+                        <li><a href="/grade/10/">高中一年级</a></li>
+                        <li><a href="/grade/11/">高中二年级</a></li>
+                        <li><a href="/grade/12/">高中三年级</a></li>
+                    </ul>
+                </div> <!-- secondary-nav ends. -->
+
+                <div class="path">
+                    <label for=""><a href="/">首页</a></label>
+                    ${self.path()}
+                </div>
+
+
+                <div id="adPic">
+                    <a href="#">
+                        <img src="../static/images/ad.jpg" alt="暑假班" />
+                    </a>
+                </div>
+                <div id="activity" class="box">
+                    <h4>最新活动</h4>
+                    <ul class="title">
+                        <li><a href="#">A佳教育秋季班火热报名中</a></li>
+                        <li><a href="#">A佳教育秋季班火热报名中</a></li>
+                        <li><a href="#">A佳教育秋季班火热报名中</a></li>
+                        <li><a href="#">A佳教育秋季班火热报名中</a></li>
+                        <li><a href="#">A佳教育秋季班火热报名中</a></li>
+                        <!--
+                        -->
+                    </ul>
+                </div>
+                <div class="clear"></div>
+
+                <div class="filter">
+                    <div style="line-height: 30px; height: 30px; background: snow url('../static/images/bg.list.top.png'); padding: 0 10px;">
+                        <b class="fl">教师筛选</b>
+                        <a href="#" class="fr">重置筛选条件</a>
+                    </div>
+                    <div class="link bd1 fl">
+                        <label for="school">校区：</label>
+                        <div class="w700 fl">
+                            <a href="#" class="cur">全部</a>
+                            <a href="#">松柏校区</a>
+                            <a href="#">文灶校区</a>
+                        </div>
+                    </div>
+                    <div class="link bd1 fl">
+                        <label for="stage">阶段：</label>
+                        <div class="w700 fl">
+                            <a href="" class="cur">全部</a>
+                            <a href="">小学</a>
+                            <a href="">初中</a>
+                            <a href="">高中</a>
+                        </div>
+                    </div>
+                    <div class="link bd1 fl">
+                        <label for="bol">学科：</label>
+                        <div class="w700 fl">
+                            <a href="" class="cur">全部</a>
+                            <a href="">语文</a>
+                            <a href="">数学</a>
+                            <a href="">英语</a>
+                            <a href="">物理</a>
+                            <a href="">化学</a>
+                            <a href="">生物</a>
+                            <a href="">政治</a>
+                            <a href="">地理</a>
+                            <a href="">历史</a>
+                        </div>
+                    </div>
+                    <div class="link bd1 fl">
+                        <label for="sex">类型：</label>
+                        <div class="w700 fl">
+                            <a href="" class="cur">全部</a>
+                            <a href="">男教师</a>
+                            <a href="">女教师</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="teacherList">
+                    <div id="teacher">
+                        <div class="w380 bd1 fl ">
+                            <div class="thumb">
+                                <a href="#" target="_blank">
+                                    <img src="../static/images/zxlu.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="intro">
+                                <b>
+                                    <a href="#" title="张晓路">
+                                        张晓路
+                                    </a>
+                                </b>
+                                <br>
+                                教授课程：数学
+                                <br>
+                                <br>
+                                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+                            </div>
+                        </div>
+                        <div class="w380 bd1 fl ">
+                            <div class="thumb">
+                                <a href="#" target="_blank">
+                                    <img src="../static/images/zxlu.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="intro">
+                                <b>
+                                    <a href="#" title="张晓路">
+                                        张晓路
+                                    </a>
+                                </b>
+                                <br>
+                                教授课程：数学
+                                <br>
+                                <br>
+                                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+                            </div>
+                        </div>
+                        <div class="w380 bd1 fl ">
+                            <div class="thumb">
+                                <a href="#" target="_blank">
+                                    <img src="../static/images/zxlu.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="intro">
+                                <b>
+                                    <a href="#" title="张晓路">
+                                        张晓路
+                                    </a>
+                                </b>
+                                <br>
+                                教授课程：数学
+                                <br>
+                                <br>
+                                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+                            </div>
+                        </div>
+                        <div class="w380 bd1 fl ">
+                            <div class="thumb">
+                                <a href="#" target="_blank">
+                                    <img src="../static/images/zxlu.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="intro">
+                                <b>
+                                    <a href="#" title="张晓路">
+                                        张晓路
+                                    </a>
+                                </b>
+                                <br>
+                                教授课程：数学
+                                <br>
+                                <br>
+                                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+                            </div>
+                        </div>
+                        <div class="w380 bd1 fl ">
+                            <div class="thumb">
+                                <a href="#" target="_blank">
+                                    <img src="../static/images/zxlu.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="intro">
+                                <b>
+                                    <a href="#" title="张晓路">
+                                        张晓路
+                                    </a>
+                                </b>
+                                <br>
+                                教授课程：数学
+                                <br>
+                                <br>
+                                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+                            </div>
+                        </div>
+                        <div class="w380 bd1 fl ">
+                            <div class="thumb">
+                                <a href="#" target="_blank">
+                                    <img src="../static/images/zxlu.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="intro">
+                                <b>
+                                    <a href="#" title="张晓路">
+                                        张晓路
+                                    </a>
+                                </b>
+                                <br>
+                                教授课程：数学
+                                <br>
+                                <br>
+                                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+                            </div>
+                        </div>
+                        <div class="w380 bd1 fl ">
+                            <div class="thumb">
+                                <a href="#" target="_blank">
+                                    <img src="../static/images/zxlu.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="intro">
+                                <b>
+                                    <a href="#" title="张晓路">
+                                        张晓路 
+                                    </a>
+                                </b>
+                                <br>
+                                教授课程：数学
+                                <br>
+                                <br>
+                                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+                                df
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pageNav" class="w760 b1 clear">
+                        分页设置
+                    </div>
+                </div> <!-- teacherList ends. -->
+            </div> <!-- main ends. -->
+            <div class="clear"></div>
+            <div id="footer" class="mt20"> <!-- footer starts. -->
+                <div class="third-nav">
+                    <ul>
+                        <li>关于我们
+                            <ul>
+                                <li><a href="#f-1">A佳教育简介</a></li>
+                                <li><a href="#f-2">A佳教育文化</a></li>
+                            </ul>
+                        </li>
+                        <li>加入我们
+                            <ul>
+                                <li><a href="#">招聘流程</a></li>
+                                <li><a href="#">薪酬福利</a></li>
+                            </ul>
+                        </li>
+                        <li>联系我们
+                            <ul>
+                                <li><a href="#">松柏校区</a></li>
+                            </ul>
+                        </li>
+                        <li>课程设置
+                            <ul>
+                                <li><a href="#">课程设置</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    Copyright &copy; 2008-2011 A佳教育 All Rights Reserved
+                </div>
+            </div> <!-- footer ends. -->
+        </div> <!-- container ends. -->
+    </body>
+</html>
+<!--
+<%inherit file="base.html" />
+
+<%def name="title()">教师列表</%def>
+
+<div id="teacherList">
+    % if teachers:
+    <ul>
+        % for teacher in teachers:
+        <li><a href="/teacher/${teacher.teacher_id}/">${teacher.teacher_name}</a></li>
+        % endfor
+    </ul>
+    % else:
+    <p>目前没有老师</p>
+    % endif
+</div>
+-->

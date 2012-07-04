@@ -1,15 +1,195 @@
 <%inherit file="base.html" />
 
 <%def name="title()">教师列表</%def>
+<%def name="path()">
+> <a href="/teacherList/">教师列表</a>
+</%def>
+
+<div class="filter">
+    <div style="line-height: 30px; height: 30px; background: snow url('../static/images/bg.list.top.png'); padding: 0 10px;">
+        <b class="fl">教师筛选</b>
+        <a href="#" class="fr">重置筛选条件</a>
+    </div>
+    <div class="link bd1 fl">
+        <label for="school">校区：</label>
+        <div class="w700 fl">
+            <a href="#" class="cur">全部</a>
+            <a href="#">松柏校区</a>
+            <a href="#">文灶校区</a>
+        </div>
+    </div>
+    <div class="link bd1 fl">
+        <label for="stage">阶段：</label>
+        <div class="w700 fl">
+            <a href="" class="cur">全部</a>
+            <a href="">小学</a>
+            <a href="">初中</a>
+            <a href="">高中</a>
+        </div>
+    </div>
+    <div class="link bd1 fl">
+        <label for="bol">学科：</label>
+        <div class="w700 fl">
+            <a href="" class="cur">全部</a>
+            <a href="">语文</a>
+            <a href="">数学</a>
+            <a href="">英语</a>
+            <a href="">物理</a>
+            <a href="">化学</a>
+            <a href="">生物</a>
+            <a href="">政治</a>
+            <a href="">地理</a>
+            <a href="">历史</a>
+        </div>
+    </div>
+    <div class="link bd1 fl">
+        <label for="sex">类型：</label>
+        <div class="w700 fl">
+            <a href="" class="cur">全部</a>
+            <a href="">男教师</a>
+            <a href="">女教师</a>
+        </div>
+    </div>
+</div>
 
 <div id="teacherList">
-    % if teachers:
-    <ul>
-        % for teacher in teachers:
-        <li><a href="/teacher/${teacher.teacher_id}/">${teacher.teacher_name}</a></li>
-        % endfor
-    </ul>
-    % else:
-    <p>目前没有老师</p>
-    % endif
-</div>
+    <div id="teacher">
+        <div class="w380 bd1 fl ">
+            <div class="thumb">
+                <a href="#" target="_blank">
+                    <img src="../static/images/zxlu.png" alt="" />
+                </a>
+            </div>
+            <div class="intro">
+                <b>
+                    <a href="#" title="张晓路">
+                        张晓路
+                    </a>
+                </b>
+                <br>
+                教授课程：数学
+                <br>
+                <br>
+                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+            </div>
+        </div>
+        <div class="w380 bd1 fl ">
+            <div class="thumb">
+                <a href="#" target="_blank">
+                    <img src="../static/images/zxlu.png" alt="" />
+                </a>
+            </div>
+            <div class="intro">
+                <b>
+                    <a href="#" title="张晓路">
+                        张晓路
+                    </a>
+                </b>
+                <br>
+                教授课程：数学
+                <br>
+                <br>
+                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+            </div>
+        </div>
+        <div class="w380 bd1 fl ">
+            <div class="thumb">
+                <a href="#" target="_blank">
+                    <img src="../static/images/zxlu.png" alt="" />
+                </a>
+            </div>
+            <div class="intro">
+                <b>
+                    <a href="#" title="张晓路">
+                        张晓路
+                    </a>
+                </b>
+                <br>
+                教授课程：数学
+                <br>
+                <br>
+                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+            </div>
+        </div>
+        <div class="w380 bd1 fl ">
+            <div class="thumb">
+                <a href="#" target="_blank">
+                    <img src="../static/images/zxlu.png" alt="" />
+                </a>
+            </div>
+            <div class="intro">
+                <b>
+                    <a href="#" title="张晓路">
+                        张晓路
+                    </a>
+                </b>
+                <br>
+                教授课程：数学
+                <br>
+                <br>
+                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+            </div>
+        </div>
+        <div class="w380 bd1 fl ">
+            <div class="thumb">
+                <a href="#" target="_blank">
+                    <img src="../static/images/zxlu.png" alt="" />
+                </a>
+            </div>
+            <div class="intro">
+                <b>
+                    <a href="#" title="张晓路">
+                        张晓路
+                    </a>
+                </b>
+                <br>
+                教授课程：数学
+                <br>
+                <br>
+                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+            </div>
+        </div>
+        <div class="w380 bd1 fl ">
+            <div class="thumb">
+                <a href="#" target="_blank">
+                    <img src="../static/images/zxlu.png" alt="" />
+                </a>
+            </div>
+            <div class="intro">
+                <b>
+                    <a href="#" title="张晓路">
+                        张晓路
+                    </a>
+                </b>
+                <br>
+                教授课程：数学
+                <br>
+                <br>
+                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+            </div>
+        </div>
+        <div class="w380 bd1 fl ">
+            <div class="thumb">
+                <a href="#" target="_blank">
+                    <img src="../static/images/zxlu.png" alt="" />
+                </a>
+            </div>
+            <div class="intro">
+                <b>
+                    <a href="#" title="张晓路">
+                        张晓路 
+                    </a>
+                </b>
+                <br>
+                教授课程：数学
+                <br>
+                <br>
+                课程介绍：你的孩子是不是对数学没兴趣？学起来没精神；对数学的作用很忙然；不爱思考？
+                df
+            </div>
+        </div>
+    </div>
+    <div id="pageNav" class="w760 b1 clear">
+        分页设置
+    </div>
+</div> <!-- teacherList ends. -->
